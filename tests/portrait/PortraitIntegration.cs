@@ -111,7 +111,20 @@ public partial class PortraitIntegration : Node
                 Check(accents.MuzzleCenter == portrait.Recipe.Muzzle && accents.MuzzleSize == portrait.Recipe.MuzzleSize,
                     "Muzzle must use the configured reference recipe.");
                 Check(accents.TigerCheeks == (species[Array.IndexOf(portraits, portrait)] == Species.Tiger), "Only the tiger recipe receives cheek markings.");
-                Check(portrait.GetNode<Sprite2D>("Face").Scale.Y == portrait.Recipe.FaceScaleY, "Face shape must use the species recipe's vertical registration.");
+                var muzzle = accents.GetNode<Sprite2D>("Muzzle");
+                Check(muzzle.Texture.ResourcePath.EndsWith("muzzle_double_lobe.svg") && muzzle.TextureFilter == CanvasItem.TextureFilterEnum.Linear &&
+                    (portrait.Recipe.MuzzleSize.X == 0 || (muzzle.Texture.GetSize() * muzzle.Scale).IsEqualApprox(portrait.Recipe.MuzzleSize)) && muzzle.Position == portrait.Recipe.Muzzle &&
+                    muzzle.Visible == (portrait.Recipe.MuzzleSize.X > 0), $"Double-lobed muzzle mismatch role={roles[Array.IndexOf(portraits, portrait)]}, texture={muzzle.Texture.ResourcePath}, filter={muzzle.TextureFilter}, size={muzzle.Texture.GetSize() * muzzle.Scale}, expected={portrait.Recipe.MuzzleSize}, position={muzzle.Position}, expectedPosition={portrait.Recipe.Muzzle}, visible={muzzle.Visible}");
+                var nose = portrait.GetNode<Sprite2D>("Nose");
+                Check(nose.Texture.ResourcePath.EndsWith("nose_heart_pink.svg") && nose.TextureFilter == CanvasItem.TextureFilterEnum.Linear &&
+                    Math.Abs(nose.Texture.GetWidth() * nose.Scale.X - portrait.Recipe.NoseWidth) < .001f && nose.Position == portrait.Recipe.Nose,
+                    "Heart-shaped nose SVG must match its explicit recipe and linear filtering.");
+                bool assassin = roles[Array.IndexOf(portraits, portrait)] == "Assassin";
+                var faceSprite = portrait.GetNode<Sprite2D>("Face");
+                Check(assassin ? faceSprite.Scale.IsEqualApprox(new Vector2(.93f, .68f)) && faceSprite.Position == new Vector2(0, -2) &&
+                    portrait.Recipe.EyeY == 1 && portrait.Recipe.Nose == new Vector2(0, 16) && portrait.Recipe.Mouth == new Vector2(0, 26) :
+                    faceSprite.Scale.IsEqualApprox(new Vector2(1, portrait.Recipe.FaceScaleY)) && faceSprite.Position == Vector2.Zero,
+                    "Face registration must match the species recipe or the explicit Assassin role exception.");
                 Check(portrait.AvatarOnly && !portrait.GetNode<Sprite2D>("Body").Visible && !portrait.GetNode<Sprite2D>("Equipment").Visible,
                     "Reference-first avatars must hide body and equipment by default.");
                 foreach (string side in new[] { "LeftEye", "RightEye" })
@@ -139,10 +152,17 @@ public partial class PortraitIntegration : Node
                     Advance(animator, 20);
                     Check(animator.Expression == expression, "Expression must remain selected after transition.");
                     Check(portrait.GetNode<Sprite2D>("MouthPose").Visible && portrait.GetNode<Sprite2D>("MouthPose").Texture != null, "All expressions need a visible source mouth texture.");
-                    float neutralWidth = portrait.GameplayMouthSize switch { MouthSize.Large => 22, MouthSize.Medium => 16, MouthSize.Small => 10, _ => 10 };
+                    float neutralWidth = portrait.GameplayMouthSize switch { MouthSize.Large => 18, MouthSize.Medium => 14, _ => 10 };
+                    float expressionWidth = (portrait.GameplayMouthSize switch { MouthSize.Large => 22, MouthSize.Medium => 16, _ => 10 }) * 1.35f;
                     var mouthSprite = portrait.GetNode<Sprite2D>("MouthPose");
-                    Check(Math.Abs(mouthSprite.Texture.GetWidth() * mouthSprite.Scale.X - neutralWidth * (expression == FaceExpression.Neutral ? 1 : 1.35f)) < .001f,
+                    Check(Math.Abs(mouthSprite.Texture.GetWidth() * mouthSprite.Scale.X - (expression == FaceExpression.Neutral ? neutralWidth : expressionWidth)) < .001f,
                         "Mouth visual width must match the explicit new reference registration, independently of eligibility.");
+                    if (expression == FaceExpression.Neutral)
+                    {
+                        float height = portrait.GameplayMouthSize switch { MouthSize.Large => 8, MouthSize.Medium => 7, _ => 6 };
+                        Check(Math.Abs(mouthSprite.Texture.GetHeight() * mouthSprite.Scale.Y - height) < .001f,
+                            "Neutral mouth height must preserve the revised 6/7/8 registration.");
+                    }
                     if (portrait.GameplayMouthSize == MouthSize.None)
                     {
                         string mouth = portrait.GetNode<Sprite2D>("MouthPose").Texture.ResourcePath;

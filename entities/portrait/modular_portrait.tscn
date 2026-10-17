@@ -12,6 +12,7 @@ script = ExtResource("1")
 [node name="Face" type="Sprite2D" parent="."]
 [node name="Accents" type="Node2D" parent="."]
 script = ExtResource("3")
+[node name="Muzzle" type="Sprite2D" parent="Accents"]
 [node name="Marking" type="Sprite2D" parent="."]
 [node name="Hair" type="Sprite2D" parent="."]
 [node name="HeadFront" type="Sprite2D" parent="."]
