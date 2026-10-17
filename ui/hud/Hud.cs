@@ -1,4 +1,5 @@
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
 using RabbitWolfTiger.Autoloads;
 
 namespace RabbitWolfTiger.Ui.Hud;
@@ -13,6 +14,8 @@ public partial class Hud : CanvasLayer
     public override void _Ready()
     {
         _healthLabel = GetNode<Label>("%HealthLabel");
+        GetNode<Label>("%Title").Text = UiText.T("LegacyTitle");
+        _healthLabel.Text = UiText.Health(100, 100);
 
         GameEvents.Instance.PlayerHealthChanged += OnPlayerHealthChanged;
         GameEvents.Instance.LevelReady += OnLevelReady;
@@ -30,7 +33,7 @@ public partial class Hud : CanvasLayer
 
     private void OnPlayerHealthChanged(int current, int max)
     {
-        _healthLabel.Text = $"HP {current} / {max}";
+        _healthLabel.Text = UiText.Health(current, max);
     }
 
     private void OnLevelReady(string levelName)
@@ -38,3 +41,4 @@ public partial class Hud : CanvasLayer
         GD.Print($"[HUD] level '{levelName}' ready");
     }
 }
+

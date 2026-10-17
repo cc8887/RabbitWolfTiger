@@ -102,3 +102,9 @@ dotnet build RabbitWolfTiger.csproj
 默认画廊现采用头像模式，动物没有统一布袍；八头像从中性正视开始。黑瞳、白口鼻垫、中性嘴与虎颊纹为明确新增的代码原生组件，原PNG未修改；每种角色有独立配准参数，保留独立视线与眨眼。Small/Medium/Large嘴在中性状态仍按10/14/18宽分级（张口表情为13.5/21.6/29.7），食性数据不变，人类食谱仍临时。
 
 首页 Reference QA / F5 打开同脸宽、中性正视暂停的实际Godot对照场景；F5返回首页。左侧合成参考切片只用于验收，右侧始终使用可换件组件。运行该场景并传 --reference-capture=/absolute/reference.png 可在真实GL环境保存截图，禁止headless伪截图。
+
+## 默认简体中文
+
+旅客、表情、按钮、食性颜色/嘴等级、原图对照、旧版移动页均默认使用简体中文。显示文案集中在 `ui/localization/UiText.cs`，内部enum、角色标识、节点名、日志marker和玩法不翻译。应用显示名为“兔狼虎”，C#程序集仍为RabbitWolfTiger。
+
+中文字体随项目打包，使用从官方Noto Sans CJK SC派生并改名的 `RwtSansSC-Regular.otf` 界面子集，不依赖系统中文字库；版权许可、固定来源、字形集合、可复现重建脚本见 `resources/fonts/`。新增文案后重建子集并运行中文界面字形/布局检查，防止换件后的动态文字漏字。

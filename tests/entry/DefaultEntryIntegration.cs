@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
+using RabbitWolfTiger.Tests.Localization;
 using RabbitWolfTiger.Entities.Portrait;
 using RabbitWolfTiger.Entities.Player;
 using RabbitWolfTiger.Levels.PortraitGallery;
@@ -20,6 +22,7 @@ public partial class DefaultEntryIntegration : Node
     private async Task Frames(int count = 3)
     {
         for (int i = 0; i < count; i++) await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        if (GetTree().CurrentScene != null) _checks += ChineseUiChecks.Run(GetTree().CurrentScene, UiText.FontPath);
     }
     private async Task Press(Key key)
     {
@@ -77,7 +80,7 @@ public partial class DefaultEntryIntegration : Node
             Check(Gallery().GetInstanceId() == homeId, "F3 on the homepage must remain on that homepage.");
             await Click(Gallery().GetNode<Button>("Return"));
             Check(GetTree().CurrentScene.SceneFilePath == "res://levels/diet_demo/diet_demo.tscn", "Rules button must open the diet demo.");
-            await Click(GetTree().CurrentScene.GetChildren().OfType<Button>().Single(b => b.Text == "F2 / Return"));
+            await Click(GetTree().CurrentScene.GetChildren().OfType<Button>().Single(b => b.Text == "返回旅客首页 / F2"));
             Gallery();
             await Press(Key.F2);
             Check(GetTree().CurrentScene.SceneFilePath == "res://levels/diet_demo/diet_demo.tscn", "Home F2 must open the diet demo.");
@@ -91,7 +94,7 @@ public partial class DefaultEntryIntegration : Node
             await Click(GetTree().CurrentScene.GetNode<Button>("Back")); Gallery();
             await Click(Gallery().GetNode<Button>("LegacySandbox"));
             Check(GetTree().CurrentScene.SceneFilePath == "res://levels/main/main.tscn", "Explicit Legacy button must open the old sandbox.");
-            await Click(GetTree().CurrentScene.GetChildren().OfType<Button>().Single(b => b.Text.StartsWith("Home /")));
+            await Click(GetTree().CurrentScene.GetChildren().OfType<Button>().Single(b => b.Text == "旅客首页 / F3"));
             Gallery();
             await Press(Key.F4);
             Check(GetTree().CurrentScene.SceneFilePath == "res://levels/main/main.tscn", "Explicit F4 must open the old sandbox.");

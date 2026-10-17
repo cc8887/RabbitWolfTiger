@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
 using RabbitWolfTiger.Entities.Diet;
 using RabbitWolfTiger.Entities.Portrait;
 
@@ -15,9 +16,9 @@ public partial class PortraitReference : Node2D
     {
         try
         {
-            Text("REFERENCE REGISTRATION · neutral / centered / paused", new Vector2(28, 18), 24);
-            Text("Matched visible face width: 96 px. Left = supplied example crop. Right = live modular Godot avatar.", new Vector2(28, 53), 16);
-            var back = new Button { Name = "Back", Text = "Gallery / F5", Position = new Vector2(1090, 20), Size = new Vector2(160, 34) };
+            Text(UiText.T("ReferenceTitle"), new Vector2(28, 18), 24);
+            Text(UiText.T("ReferenceSubtitle"), new Vector2(28, 53), 16);
+            var back = new Button { Name = "Back", Text = UiText.T("GalleryBack"), Position = new Vector2(1090, 20), Size = new Vector2(160, 34) };
             back.Pressed += Back; AddChild(back);
             string[] names = { "Rabbit", "Wolf", "Tiger", "Carrot", "Refugee", "Assassin", "King", "Guard" };
             Species[] species = { Species.Rabbit, Species.Wolf, Species.Tiger, Species.Carrot, Species.Human, Species.Human, Species.Human, Species.Human };
@@ -30,9 +31,9 @@ public partial class PortraitReference : Node2D
             for (int i = 0; i < 8; i++)
             {
                 float x = 28 + i % 4 * 310, y = 95 + i / 4 * 285;
-                Text(names[i], new Vector2(x + 13, y + 10), 21);
-                Text("reference", new Vector2(x + 35, y + 36), 13);
-                Text("modular", new Vector2(x + 188, y + 36), 13);
+                Text(UiText.Character(names[i]), new Vector2(x + 13, y + 10), 21);
+                Text(UiText.T("Reference"), new Vector2(x + 35, y + 36), 13);
+                Text(UiText.T("Modular"), new Vector2(x + 188, y + 36), 13);
                 var reference = new Sprite2D { Name = "Reference" + i, Centered = false,
                     Texture = GD.Load<Texture2D>($"res://resources/portrait/reference/example_01_{crops[i]}.png") };
                 float scale = 96 / widths[i]; reference.Scale = Vector2.One * scale;
@@ -42,9 +43,9 @@ public partial class PortraitReference : Node2D
                 portrait.Scale = Vector2.One * (96f / 103f); AddChild(portrait);
                 portrait.Configure(species[i], names[i], catalog.Create(species[i]));
                 portrait.Animator.FreezeNeutralReference(); Portraits[i] = portrait;
-                Text(i == 4 ? "Human base reference; scarf is role variant" : "Source crop vs independent component rig", new Vector2(x + 10, y + 237), 12);
+                Text(UiText.T(i == 4 ? "RefugeeReference" : "ReferenceCardNote"), new Vector2(x + 10, y + 237), 12);
             }
-            Text("New components: black pupil, white muzzle, neutral lips, tiger cheek markings. Human diet remains provisional.", new Vector2(28, 687), 14);
+            Text(UiText.T("ReferenceFooter"), new Vector2(28, 687), 14);
             GD.Print("[REFERENCE] Ready: 8 neutral centered paused avatars");
             string? capture = OS.GetCmdlineUserArgs().FirstOrDefault(arg => arg.StartsWith("--reference-capture="))?[20..];
             if (capture != null)

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="RabbitWolfTiger"
+config/name="兔狼虎"
 run/main_scene="res://levels/portrait_gallery/portrait_gallery.tscn"
 config/features=PackedStringArray("4.7", "C#")
 config/icon="res://icon.svg"
@@ -29,6 +29,14 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="RabbitWolfTiger"
+
+[gui]
+
+theme/custom_font="res://resources/fonts/RwtSansSC-Regular.otf"
+
+[internationalization]
+
+locale/fallback="zh_CN"
 
 [input]
 

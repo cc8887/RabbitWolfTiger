@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
 using RabbitWolfTiger.Entities.Diet;
 
 namespace RabbitWolfTiger.Levels.DietDemo;
@@ -20,26 +21,26 @@ public partial class DietDemo : Node2D
     {
         _catalog = DietCatalog.FromJson(FileAccess.GetFileAsString("res://resources/diet/initial_diets.json"));
         ResetBodies();
-        AddLabel("FACE COLOR + MOUTH SIZE / composition sandbox", new Vector2(30, 25), 25);
-        AddLabel("Small = 1 color   Medium = 2 colors   Large = 3 colors   None = 0", new Vector2(30, 70), 20);
-        AddLabel("Supplied modular art. Eyes = separate whites + pupils. Swap mouth / face to test composition.", new Vector2(30, 105), 18);
+        AddLabel(UiText.T("DietTitle"), new Vector2(30, 25), 25);
+        AddLabel(UiText.T("DietLegend"), new Vector2(30, 70), 20);
+        AddLabel(UiText.T("DietInstructions"), new Vector2(30, 105), 18);
         for (int i = 0; i < _bodies.Length; i++)
         {
             int index = i;
             float x = 30 + i * 245;
-            AddLabel(_names[i], new Vector2(x, 160), 24);
+            AddLabel(UiText.Character(_names[i]), new Vector2(x, 160), 24);
             BuildParts(i, new Vector2(125 + i * 245, 255));
             _details[i] = AddLabel("", new Vector2(x, 330), 17);
             _details[i].Name = $"Details{i}";
             _details[i].Size = new Vector2(230, 180);
             _details[i].AutowrapMode = TextServer.AutowrapMode.WordSmart;
-            AddButton("Swap mouth", new Vector2(x, 520), () =>
+            AddButton(UiText.T("SwapMouths"), new Vector2(x, 520), () =>
             {
                 _mouthIndexes[index] = (_mouthIndexes[index] + 1) % _catalog.Templates.Count;
                 _bodies[index].ReplaceMouth(_catalog.Templates[_mouthIndexes[index]].Mouth);
                 Refresh();
             });
-            AddButton("Swap face", new Vector2(x, 565), () =>
+            AddButton(UiText.T("SwapFaces"), new Vector2(x, 565), () =>
             {
                 FaceColor[] colors = Enum.GetValues<FaceColor>();
                 int next = (Array.IndexOf(colors, _bodies[index].Face.Color) + 1) % colors.Length;
@@ -47,9 +48,9 @@ public partial class DietDemo : Node2D
                 Refresh();
             });
         }
-        AddButton("Reset parts", new Vector2(30, 620), () => { ResetBodies(); Refresh(); });
-        AddButton("F2 / Return", new Vector2(250, 620), ReturnToPortraits);
-        AddLabel("Humans: refugee / assassin / king / guard all share Skin + provisional None. No role powers implemented.", new Vector2(30, 675), 17);
+        AddButton(UiText.T("ResetParts"), new Vector2(30, 620), () => { ResetBodies(); Refresh(); });
+        AddButton(UiText.T("DietBack"), new Vector2(250, 620), ReturnToPortraits);
+        AddLabel(UiText.T("DietFooter"), new Vector2(30, 675), 17);
         Refresh();
     }
 
@@ -66,10 +67,9 @@ public partial class DietDemo : Node2D
         for (int i = 0; i < _bodies.Length; i++)
         {
             DietBody body = _bodies[i];
-            string recipe = body.Mouth.EdibleColors.Count == 0 ? "(none)" : string.Join(", ", body.Mouth.EdibleColors);
-            string targets = string.Join(", ", _bodies.Select((target, index) => (target, index))
-                .Where(pair => body.CanEat(pair.target)).Select(pair => _names[pair.index]));
-            _details[i].Text = $"Face: {body.Face.Color}\nMouth: {body.Mouth.Size}\nEats colors:\n{recipe}\nCan eat: {(targets.Length == 0 ? "none" : targets)}";
+            var targets = _bodies.Select((target, index) => (target, index))
+                .Where(pair => body.CanEat(pair.target)).Select(pair => _names[pair.index]);
+            _details[i].Text = UiText.DietDetails(body, targets);
             _details[i].AddThemeFontSizeOverride("font_size", 16);
             _faces[i].Texture = GD.Load<Texture2D>(FacePath(body.Face.Color));
             _mouths[i].Visible = body.Mouth.Size != MouthSize.None;
