@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../entities/diet/*.cs" />
+    <Compile Include="DietRulesChecks.cs" />
+    <Compile Include="Program.cs" />
+    <None Include="../../resources/diet/initial_diets.json" Link="initial_diets.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

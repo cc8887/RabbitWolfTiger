@@ -49,7 +49,7 @@ offset_top = 24.0
 offset_right = 220.0
 offset_bottom = 64.0
 horizontal_alignment = 1
-text = "RabbitWolfTiger"
+text = "Legacy movement sandbox"
 label_settings = SubResource("LabelSettings_title")
 
 [node name="HealthLabel" type="Label" parent="Hud"]
@@ -63,3 +63,4 @@ offset_right = -24.0
 offset_bottom = 56.0
 horizontal_alignment = 2
 text = "HP 100 / 100"
+

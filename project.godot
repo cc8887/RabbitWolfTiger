@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RabbitWolfTiger"
-run/main_scene="res://levels/main/main.tscn"
+run/main_scene="res://levels/portrait_gallery/portrait_gallery.tscn"
 config/features=PackedStringArray("4.7", "C#")
 config/icon="res://icon.svg"
 
@@ -63,3 +63,4 @@ move_down={
 [physics]
 
 common/physics_ticks_per_second=60
+
