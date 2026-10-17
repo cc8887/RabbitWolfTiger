@@ -97,7 +97,7 @@ jobs:
         run: |
           set -euo pipefail
           timeout 120 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
-            --display-driver x11 --rendering-method gl_compatibility --path . \
+            --display-driver x11 --rendering-method gl_compatibility --audio-driver Dummy --path . \
             res://tests/entry/default_entry_integration.tscn -- \
             --capture-entry="$GITHUB_WORKSPACE/evidence/default-entry.png" 2>&1 | tee evidence/entry-opengl.log
           grep -Eq '^PASS: [0-9]+ configured-entry/navigation checks' evidence/entry-opengl.log
@@ -116,7 +116,7 @@ jobs:
         run: |
           set -euo pipefail
           timeout 90 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
-            --display-driver x11 --rendering-method gl_compatibility --path . \
+            --display-driver x11 --rendering-method gl_compatibility --audio-driver Dummy --path . \
             res://tests/diet/diet_demo_integration.tscn -- \
             --capture="$GITHUB_WORKSPACE/evidence/diet-demo.png" 2>&1 | tee evidence/ui-opengl.log
           grep -Eq '^PASS: [0-9]+ real-scene UI integration checks' evidence/ui-opengl.log
@@ -137,7 +137,7 @@ jobs:
         run: |
           set -euo pipefail
           timeout 180 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
-            --display-driver x11 --rendering-method gl_compatibility --path . \
+            --display-driver x11 --rendering-method gl_compatibility --audio-driver Dummy --path . \
             res://tests/portrait/portrait_integration.tscn -- \
             --capture="$GITHUB_WORKSPACE/evidence/portrait.png" \
             --frames-dir="$GITHUB_WORKSPACE/evidence/portrait-frames" 2>&1 | tee evidence/portrait-opengl.log
