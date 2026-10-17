@@ -25,3 +25,18 @@ F3进入八角色展示，初始不同表情；Select指定一人，All恢复全
 `ModularPortrait.Configure(species, role, body)` 装配，`ProjectGameplay(body)`投影变化，`SetHeadPart(name)`只换头饰。`Animator.SetExpression`、`SetGaze`、`Blink`、`FollowPointer`、`AutoBlink`、`AnimationPaused`控制动画；`Advance(delta)`支持确定性验证。场景根可自由平移缩放。
 
 自动验收位于 `tests/portrait/`；实际GPU视觉与shader渲染仍需真实非headless运行确认，headless逻辑验收不能替代截图或GPU验收。
+
+## 参考忠实度返工（当前实现，取代上方首版配准参数）
+
+- 开放眼保留原sclera_blank，独立瞳孔改为新SVG黑圆瞳；白眼宽22–24、瞳宽15–16，按角色Recipe注册到脸中心略下。位移半径2.5，alpha与开度遮罩继续裁剪两层。
+- Face盘单独按兔.76、狼.78、虎.82、萝卜.84、人.85做Y缩放，五官/耳朵不随Face变扁。配方来自原组合例目测配准，不是原作者骨架。
+- 动物不再装统一布袍。默认画廊为头像模式，全部中性正视起步；视线跟随可按按钮启用，自动眨眼仍有效。SetAvatarOnly(false)只对已有的人类服装/装备显示，不给动物强加衣服。
+- 四种动物均有新增原生白口鼻垫；虎另有新增深颊纹。人类无白垫。新增SVG/矢量均明确列在 ../generated/README.md。
+- 中性嘴改为紧凑分瓣嘴/人类装饰嘴。Small/Medium/Large仍有10/16/22宽的可见差别，非中性宽度乘1.35；None装饰嘴不赋予捕食能力。食性数据及HUD不变。
+- 刺客隐藏普通头发，兜帽改为前景独立壳并运行时开洞；原帽烘焙肤色由shell shader遮掉，内部颜色来自当前Face。帽壳/Face使用独立材质，换脸不会留下固定肤色块。
+- F5提供真正Godot参考配准场景：左为已有原组合切片，右为模块化头像，按可见脸宽96px注册；右侧强制neutral/正视/暂停。难民仅有普通人基底参考，头巾是角色变体，界面明确标注。合成参考PNG只出现在QA场景，不用于角色实现。
+- 实际截图入口：运行 levels/portrait_reference/portrait_reference.tscn，并加 --reference-capture=/absolute/reference.png。headless/dummy会拒绝截图；最终视觉必须实际GPU渲染评审。
+
+第二轮真实GL图评后修正：白垫改独立双瓣SVG，兔42×23/狼46×25/虎46×25/萝卜40×24；新增心形粉鼻、短粗圆w嘴，取消长竖杆。中性三级宽10/14/18、高6/7/8，非中性仍为13.5/21.6/29.7宽。眼瞳略缩至14宽；兔耳缩到.9；帽盔上移15、王冠上移8；刺客帽壳变窄，脸颌收进帽内，恢复少量额前原头发。此段参数取代前一快照参数，尚须第二轮真实GL复验。
+
+第三轮限定修正：守卫不再通过抬盔躲开黑眼洞；helmet_openings shader按原80×87PNG两个暗窗坐标开透明孔，眼位直接对齐孔内，换帽清除材质。原头盔PNG保留。Eyes/White/Pupil及小五官显式LinearWithMipmaps，对生成SVG与原眼白启用导入mipmap，解决高源分辨率微缩时仍锯齿的问题。对照页标签上移7px。虎默认额标改已有cross_mark；鼻唇组以短连接笔画衔接，未恢复长锚形嘴。

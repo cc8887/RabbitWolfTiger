@@ -30,9 +30,10 @@ public partial class PortraitGallery : Node2D
         Bodies = _species.Select(_catalog.Create).ToArray();
         Portraits = new ModularPortrait[8];
         Label("MODULAR PORTRAITS", new Vector2(28, 18), 27, "ecdec4");
-        Label("Original art / 8 characters / 5 expressions / independent gaze + blink", new Vector2(28, 53), 16, "acb6c9");
+        Label("Layered source art + new vector accents / 8 avatars / independent gaze + blink", new Vector2(28, 53), 16, "acb6c9");
         Button("Rules / F2", "Return", new Vector2(1110, 24), 140, OpenDietDemo);
         Button("Legacy movement / F4", "LegacySandbox", new Vector2(870, 24), 220, OpenLegacySandbox);
+        Button("Reference QA / F5", "ReferenceQa", new Vector2(660, 24), 195, OpenReferenceQa);
         int e = 0;
         foreach (FaceExpression expression in Enum.GetValues<FaceExpression>())
         {
@@ -51,10 +52,11 @@ public partial class PortraitGallery : Node2D
             int selected = i;
             Button("Select", "Select" + i, new Vector2(x + 207, y + 10), 70, () => SelectPortrait(selected));
             var portrait = scene.Instantiate<ModularPortrait>();
-            portrait.Name = "Portrait" + i; portrait.Position = new Vector2(x + 147, y + 105); portrait.Scale = Vector2.One * .85f;
+            portrait.Name = "Portrait" + i; portrait.Position = new Vector2(x + 147, y + 137); portrait.Scale = Vector2.One;
             AddChild(portrait); Portraits[i] = portrait;
             portrait.Configure(_species[i], _names[i], Bodies[i]);
-            portrait.Animator.SetExpression((FaceExpression)(i % 5));
+            portrait.Animator.SetExpression(FaceExpression.Neutral);
+            portrait.Animator.FollowPointer = false;
             _details[i] = Label("", new Vector2(x + 13, y + 200), 13, "d6ddea");
             _details[i].Name = "Details" + i;
         }
@@ -151,7 +153,9 @@ public partial class PortraitGallery : Node2D
     {
         if (@event is InputEventKey { Pressed: true, Echo: false, Keycode: Key.F2 }) OpenDietDemo();
         if (@event is InputEventKey { Pressed: true, Echo: false, Keycode: Key.F4 }) OpenLegacySandbox();
+        if (@event is InputEventKey { Pressed: true, Echo: false, Keycode: Key.F5 }) OpenReferenceQa();
     }
+    private void OpenReferenceQa() => GetTree().ChangeSceneToFile("res://levels/portrait_reference/portrait_reference.tscn");
     private void OpenDietDemo() => GetTree().ChangeSceneToFile("res://levels/diet_demo/diet_demo.tscn");
     private void OpenLegacySandbox() => GetTree().ChangeSceneToFile("res://levels/main/main.tscn");
 }
