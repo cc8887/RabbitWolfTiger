@@ -112,6 +112,40 @@ jobs:
           print('Configured default homepage screenshot verified: 1280x720')
           PYTHON
 
+      - name: Real OpenGL neutral same-size reference registration
+        run: |
+          set -euo pipefail
+          timeout 90 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
+            --display-driver x11 --rendering-method gl_compatibility --audio-driver Dummy --path . \
+            res://levels/portrait_reference/portrait_reference.tscn -- \
+            --reference-capture="$GITHUB_WORKSPACE/evidence/reference-neutral.png" 2>&1 | tee evidence/reference-opengl.log
+          grep -F '[REFERENCE] Ready: 8 neutral centered paused avatars' evidence/reference-opengl.log
+          grep -F '[REFERENCE] Captured:' evidence/reference-opengl.log
+          grep -E 'OpenGL|OpenGL API' evidence/reference-opengl.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/reference-opengl.log; then exit 1; fi
+          python3 - <<'PYTHON'
+          import pathlib, struct
+          data = pathlib.Path('evidence/reference-neutral.png').read_bytes()
+          assert data[:8] == b'\x89PNG\r\n\x1a\n'
+          assert struct.unpack('>II', data[16:24]) == (1280, 720)
+          PYTHON
+          sha256sum evidence/default-entry.png evidence/reference-neutral.png | tee evidence/early-visual.sha256
+
+      # Make the first two review images available before the animation sequence.
+      - name: Upload early homepage and reference evidence
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: early-visual-evidence-${{ github.sha }}
+          path: |
+            evidence/default-entry.png
+            evidence/reference-neutral.png
+            evidence/early-visual.sha256
+            evidence/entry-opengl.log
+            evidence/reference-opengl.log
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Real OpenGL UI integration and screenshot
         run: |
           set -euo pipefail
@@ -169,6 +203,10 @@ jobs:
         if: success()
         run: |
           set -euo pipefail
+          sha256sum evidence/reference-neutral.png | tee evidence/reference-neutral.sha256
+          echo 'BEGIN_REFERENCE_NEUTRAL_PNG_BASE64'
+          base64 --wrap=76 evidence/reference-neutral.png
+          echo 'END_REFERENCE_NEUTRAL_PNG_BASE64'
           sha256sum evidence/default-entry.png | tee evidence/default-entry.sha256
           echo 'BEGIN_DEFAULT_ENTRY_PNG_BASE64'
           base64 --wrap=76 evidence/default-entry.png

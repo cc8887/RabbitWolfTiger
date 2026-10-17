@@ -6,6 +6,7 @@ using Godot;
 using RabbitWolfTiger.Entities.Diet;
 using RabbitWolfTiger.Entities.Portrait;
 using RabbitWolfTiger.Levels.PortraitGallery;
+using RabbitWolfTiger.Levels.PortraitReference;
 
 namespace RabbitWolfTiger.Tests.Portrait;
 
@@ -106,11 +107,26 @@ public partial class PortraitIntegration : Node
             var materialIds = new HashSet<ulong>();
             foreach (var portrait in portraits)
             {
+                var accents = portrait.GetNode<PortraitAccents>("Accents");
+                Check(accents.MuzzleCenter == portrait.Recipe.Muzzle && accents.MuzzleSize == portrait.Recipe.MuzzleSize,
+                    "Muzzle must use the configured reference recipe.");
+                Check(accents.TigerCheeks == (species[Array.IndexOf(portraits, portrait)] == Species.Tiger), "Only the tiger recipe receives cheek markings.");
+                Check(portrait.GetNode<Sprite2D>("Face").Scale.Y == portrait.Recipe.FaceScaleY, "Face shape must use the species recipe's vertical registration.");
+                Check(portrait.AvatarOnly && !portrait.GetNode<Sprite2D>("Body").Visible && !portrait.GetNode<Sprite2D>("Equipment").Visible,
+                    "Reference-first avatars must hide body and equipment by default.");
                 foreach (string side in new[] { "LeftEye", "RightEye" })
                 {
                     var white = portrait.GetNode<Sprite2D>($"Eyes/{side}/White");
                     var pupil = portrait.GetNode<Sprite2D>($"Eyes/{side}/Pupil");
                     Check(white.Texture != null && pupil.Texture != null && white != pupil, "Independent source eye layers required.");
+                    Check(pupil.Texture!.ResourcePath.EndsWith("pupil_black.svg"), "Registered eye must use the newly identified black pupil component.");
+                    var eye = portrait.GetNode<Node2D>($"Eyes/{side}");
+                    Check(eye.Position.IsEqualApprox(new Vector2(side == "LeftEye" ? -portrait.Recipe.EyeX : portrait.Recipe.EyeX, portrait.Recipe.EyeY)), "Configured eyes must use the species-specific registration recipe.");
+                    Check(Math.Abs(white.Texture!.GetWidth() * white.Scale.X - portrait.Recipe.WhiteWidth) < .001f &&
+                        Math.Abs(pupil.Texture.GetWidth() * pupil.Scale.X - portrait.Recipe.PupilWidth) < .001f,
+                        "Independent eye layers must match their reference recipe widths.");
+                    Vector2 relative = pupil.Texture.GetSize() * pupil.Scale / (white.Texture.GetSize() * white.Scale);
+                    Check(Material(portrait, side, "Pupil").GetShaderParameter("relative_size").AsVector2().IsEqualApprox(relative), "Pupil clipping transform must match the newly registered eye layers.");
                     foreach (var material in new[] { Material(portrait, side, "White"), Material(portrait, side, "Pupil") })
                         Check(materialIds.Add(material.GetInstanceId()), "Every portrait/eye/layer requires its own material state.");
                     Check(Material(portrait, side, "Pupil").GetShaderParameter("pupil_layer").AsBool(), "Pupil clipping must be enabled.");
@@ -123,10 +139,17 @@ public partial class PortraitIntegration : Node
                     Advance(animator, 20);
                     Check(animator.Expression == expression, "Expression must remain selected after transition.");
                     Check(portrait.GetNode<Sprite2D>("MouthPose").Visible && portrait.GetNode<Sprite2D>("MouthPose").Texture != null, "All expressions need a visible source mouth texture.");
+                    float neutralWidth = portrait.GameplayMouthSize switch { MouthSize.Large => 22, MouthSize.Medium => 16, MouthSize.Small => 10, _ => 10 };
+                    var mouthSprite = portrait.GetNode<Sprite2D>("MouthPose");
+                    Check(Math.Abs(mouthSprite.Texture.GetWidth() * mouthSprite.Scale.X - neutralWidth * (expression == FaceExpression.Neutral ? 1 : 1.35f)) < .001f,
+                        "Mouth visual width must match the explicit new reference registration, independently of eligibility.");
                     if (portrait.GameplayMouthSize == MouthSize.None)
                     {
                         string mouth = portrait.GetNode<Sprite2D>("MouthPose").Texture.ResourcePath;
-                        Check(mouth.EndsWith("mouth_flat.png") || mouth.EndsWith("mouth_smile.png") || mouth.EndsWith("mouth_frown.png"), "None must use a decorative closed expression mouth.");
+                        string neutral = portrait.Recipe.Animal ? "mouth_neutral_fork.svg" : "mouth_neutral_human.svg";
+                        Check(expression == FaceExpression.Neutral ? mouth.EndsWith(neutral) :
+                            mouth.EndsWith("mouth_flat.png") || mouth.EndsWith("mouth_smile.png") || mouth.EndsWith("mouth_frown.png"),
+                            "None must use the registered neutral decoration or a non-predatory expression mouth.");
                     }
                     Check(DietState(bodies) == baseline, "Expression animation must not alter food rules.");
                 }
@@ -138,7 +161,10 @@ public partial class PortraitIntegration : Node
                 {
                     var pupil = portrait.GetNode<Sprite2D>($"Eyes/{side}/Pupil");
                     var white = portrait.GetNode<Sprite2D>($"Eyes/{side}/White");
-                    Check(pupil.Position.Length() <= 3.1001f, "Pupil displacement exceeds its allowed eye radius.");
+                    Vector2 availableMargin = (white.Texture.GetSize() * white.Scale - pupil.Texture.GetSize() * pupil.Scale) / 2;
+                    Check(portrait.GazeRadius > 0 && portrait.GazeRadius <= Math.Min(availableMargin.X, availableMargin.Y), "Gaze radius must fit the eye layers' actual geometric margin.");
+                    Check(pupil.Position.Length() <= portrait.GazeRadius + .0001f && Math.Abs(pupil.Position.Length() - portrait.GazeRadius) < .01f,
+                        "Extreme gaze must reach, but not exceed, the registered safe radius.");
                     Vector2 expected = pupil.Position / (white.Texture.GetSize() * white.Scale);
                     Check(Material(portrait, side, "Pupil").GetShaderParameter("gaze_uv").AsVector2().IsEqualApprox(expected), "Mask coordinates must track actual pupil displacement.");
                 }
@@ -243,6 +269,26 @@ public partial class PortraitIntegration : Node
                 }
             }
             gallery.QueueFree(); await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            var reference = GD.Load<PackedScene>("res://levels/portrait_reference/portrait_reference.tscn").Instantiate<PortraitReference>();
+            AddChild(reference);
+            Check(reference.Portraits.Length == 8, "Reference QA must contain eight live modular portraits.");
+            for (int i = 0; i < reference.Portraits.Length; i++)
+            {
+                var portrait = reference.Portraits[i];
+                var animator = portrait.Animator;
+                Check(animator.Expression == FaceExpression.Neutral && animator.AnimationPaused && !animator.FollowPointer &&
+                    animator.Gaze == Vector2.Zero && animator.TargetGaze == Vector2.Zero && animator.Openness == 1 && animator.BlinkAmount == 0,
+                    "Reference QA must freeze a neutral, centered, fully open pose.");
+                Advance(animator, 60);
+                Check(animator.Gaze == Vector2.Zero && animator.Openness == 1 && animator.BlinkAmount == 0, "Reference QA must remain frozen over time.");
+                Check(reference.GetNode<Sprite2D>($"Reference{i}").Texture != null, "Source reference crop must load separately.");
+                Check(Walk(portrait).OfType<Sprite2D>().All(sprite => sprite.Texture == null || !sprite.Texture.ResourcePath.Contains("/reference/")),
+                    "Live avatar must not substitute a whole reference image for its independent rig.");
+            }
+            var hood = reference.Portraits[5].GetNode<Sprite2D>("HoodFrame");
+            Check(hood.Texture.ResourcePath.EndsWith("hood.png") && hood.Modulate == Colors.White && hood.SelfModulate == Colors.White && hood.Material is ShaderMaterial,
+                "Assassin must keep the original hood texture/color with a separate opening mask.");
+            reference.QueueFree(); await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
             gallery = galleryScene.Instantiate<PortraitGallery>(); AddChild(gallery);
             foreach (var portrait in gallery.Portraits) { portrait.Animator.SetProcess(false); portrait.Animator.FollowPointer = false; portrait.Animator.AutoBlink = false; Advance(portrait.Animator, 25); }
             await Capture(gallery.Portraits, capture, framesDirectory, gallery.SetExpression);

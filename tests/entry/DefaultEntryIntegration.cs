@@ -83,6 +83,12 @@ public partial class DefaultEntryIntegration : Node
             Check(GetTree().CurrentScene.SceneFilePath == "res://levels/diet_demo/diet_demo.tscn", "Home F2 must open the diet demo.");
             await Press(Key.F2);
             Gallery();
+            await Click(Gallery().GetNode<Button>("ReferenceQa"));
+            Check(GetTree().CurrentScene.SceneFilePath == "res://levels/portrait_reference/portrait_reference.tscn", "Reference button must open the real registration view.");
+            await Press(Key.F5); Gallery();
+            await Press(Key.F5);
+            Check(GetTree().CurrentScene.SceneFilePath == "res://levels/portrait_reference/portrait_reference.tscn", "Home F5 must open reference QA.");
+            await Click(GetTree().CurrentScene.GetNode<Button>("Back")); Gallery();
             await Click(Gallery().GetNode<Button>("LegacySandbox"));
             Check(GetTree().CurrentScene.SceneFilePath == "res://levels/main/main.tscn", "Explicit Legacy button must open the old sandbox.");
             await Click(GetTree().CurrentScene.GetChildren().OfType<Button>().Single(b => b.Text.StartsWith("Home /")));

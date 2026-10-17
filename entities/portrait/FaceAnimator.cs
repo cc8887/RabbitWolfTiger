@@ -46,6 +46,16 @@ public partial class FaceAnimator : Node
         _blinkTime = -1; BlinkAmount = 0; _expressionHold = 0.35f;
         if (_portrait != null) { _portrait.ApplyMouthPose(expression); Apply(); }
     }
+    /// <summary>Explicit reference QA pose: instant neutral, centered, paused. No screenshot-only fake state.</summary>
+    public void FreezeNeutralReference()
+    {
+        SetExpression(FaceExpression.Neutral);
+        Gaze = TargetGaze = Vector2.Zero;
+        Openness = _targetOpen = 1; _slant = _targetSlant = 0;
+        BlinkAmount = 0; _blinkTime = -1;
+        FollowPointer = false; AutoBlink = false; AnimationPaused = true;
+        Apply();
+    }
     public void SetGaze(Vector2 normalized) => TargetGaze = normalized.LimitLength(1);
     public void Blink()
     {
@@ -56,7 +66,7 @@ public partial class FaceAnimator : Node
     {
         if (AnimationPaused || _portrait == null || !IsInsideTree()) return;
         float dt = Mathf.Clamp(delta, 0, 0.05f);
-        if (FollowPointer) SetGaze((_portrait.GetLocalMousePosition() - new Vector2(0, -12)) / 120f);
+        if (FollowPointer) SetGaze((_portrait.GetLocalMousePosition() - new Vector2(0, _portrait.Recipe.EyeY)) / 120f);
         float blend = 1 - Mathf.Exp(-14 * dt);
         Gaze = Gaze.Lerp(TargetGaze, blend);
         Openness = Mathf.Lerp(Openness, _targetOpen, blend);
