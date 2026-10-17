@@ -38,3 +38,5 @@ F3进入八角色展示，初始不同表情；Select指定一人，All恢复全
 - 实际截图入口：运行 levels/portrait_reference/portrait_reference.tscn，并加 --reference-capture=/absolute/reference.png。headless/dummy会拒绝截图；最终视觉必须实际GPU渲染评审。
 
 第二轮真实GL图评后修正：白垫改独立双瓣SVG，兔42×23/狼46×25/虎46×25/萝卜40×24；新增心形粉鼻、短粗圆w嘴，取消长竖杆。中性三级宽10/14/18、高6/7/8，非中性仍为13.5/21.6/29.7宽。眼瞳略缩至14宽；兔耳缩到.9；帽盔上移15、王冠上移8；刺客帽壳变窄，脸颌收进帽内，恢复少量额前原头发。此段参数取代前一快照参数，尚须第二轮真实GL复验。
+
+第三轮限定修正：守卫不再通过抬盔躲开黑眼洞；helmet_openings shader按原80×87PNG两个暗窗坐标开透明孔，眼位直接对齐孔内，换帽清除材质。原头盔PNG保留。Eyes/White/Pupil及小五官显式LinearWithMipmaps，对生成SVG与原眼白启用导入mipmap，解决高源分辨率微缩时仍锯齿的问题。对照页标签上移7px。虎默认额标改已有cross_mark；鼻唇组以短连接笔画衔接，未恢复长锚形嘴。

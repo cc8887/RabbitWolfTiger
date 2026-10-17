@@ -25,10 +25,12 @@ public partial class ModularPortrait : Node2D
     private Species _species;
     private string _role = "";
     private static Texture2D? _blackPupil, _animalNeutral, _humanNeutral, _pinkNose;
-    private static Shader? _hoodShader;
+    private static Shader? _hoodShader, _helmetShader;
+    private ShaderMaterial? _helmetMaterial;
 
     public override void _Ready()
     {
+        TextureFilter = TextureFilterEnum.LinearWithMipmaps;
         _face = GetNode<Sprite2D>("Face"); _mouth = GetNode<Sprite2D>("MouthPose");
         _head = GetNode<Sprite2D>("HeadFront");
         Animator = GetNode<FaceAnimator>("FaceAnimator");
@@ -41,8 +43,10 @@ public partial class ModularPortrait : Node2D
             var sclera = _eyes[side].GetNode<Sprite2D>("White");
             _whites[side] = sclera;
             _pupils[side] = _eyes[side].GetNode<Sprite2D>("Pupil");
+            sclera.TextureFilter = TextureFilterEnum.LinearWithMipmaps;
+            _eyes[side].TextureFilter = TextureFilterEnum.LinearWithMipmaps;
             sclera.Texture = white; sclera.Scale = Vector2.One * (Recipe.WhiteWidth / white.GetWidth());
-            _pupils[side].TextureFilter = TextureFilterEnum.Linear;
+            _pupils[side].TextureFilter = TextureFilterEnum.LinearWithMipmaps;
             _pupils[side].Texture = pupil; _pupils[side].Scale = Vector2.One * (Recipe.PupilWidth / pupil.GetWidth());
             _whiteMaterials[side] = CreateEyeMaterial(white, false);
             _pupilMaterials[side] = CreateEyeMaterial(white, true);
@@ -51,8 +55,8 @@ public partial class ModularPortrait : Node2D
         }
         _pinkNose ??= GD.Load<Texture2D>("res://resources/portrait/generated/nose_heart_pink.svg");
         GetNode<Sprite2D>("Nose").Texture = _pinkNose;
-        GetNode<Sprite2D>("Nose").TextureFilter = TextureFilterEnum.Linear;
-        _mouth.TextureFilter = TextureFilterEnum.Linear;
+        GetNode<Sprite2D>("Nose").TextureFilter = TextureFilterEnum.LinearWithMipmaps;
+        _mouth.TextureFilter = TextureFilterEnum.LinearWithMipmaps;
         Animator.RefreshVisuals();
     }
     private static ShaderMaterial CreateEyeMaterial(Texture2D white, bool pupil)
@@ -80,7 +84,7 @@ public partial class ModularPortrait : Node2D
             string animal = species.ToString().ToLowerInvariant();
             Part("EarLeft", $"05_head_parts/{animal}_ear_left", new Vector2(0, Recipe.EarY), Recipe.EarScale);
             Part("EarRight", $"05_head_parts/{animal}_ear_right", new Vector2(0, Recipe.EarY), Recipe.EarScale);
-            if (species == Species.Tiger) Part("Marking", "06_markings/king_mark", new Vector2(0, -31), .53f);
+            if (species == Species.Tiger) Part("Marking", "06_markings/cross_mark", new Vector2(0, -31), .53f);
         }
         if (species == Species.Carrot) SetHeadPart("leaves");
         if (species == Species.Human)
@@ -91,7 +95,7 @@ public partial class ModularPortrait : Node2D
                 case "Refugee": SetHeadPart("headscarf"); break;
                 case "Assassin":
                     // Slim shell, tucked chin and a short source-hair fringe visible through the aperture.
-                    Recipe = Recipe with { EyeY = 1, Nose = new Vector2(0, 16), Mouth = new Vector2(0, 26) };
+                    Recipe = Recipe with { EyeY = 1, Nose = new Vector2(0, 16), Mouth = new Vector2(0, 22) };
                     _face.Scale = new Vector2(.93f, .68f); _face.Position = new Vector2(0, -2);
                     Part("Hair", "05_head_parts/hair", new Vector2(0, -39), .9f);
                     Part("HoodFrame", "05_head_parts/hood", new Vector2(0, -31), 1);
@@ -157,7 +161,15 @@ public partial class ModularPortrait : Node2D
         HeadPart = name;
         _head.Texture = name == "" ? null : PortraitArt.Texture("05_head_parts/" + name);
         _head.Position = new Vector2(0, name == "headscarf" ? -48 : name == "helmet" ? -63 : name == "crown" ? -69 : -49);
-        _head.Scale = Vector2.One * (name == "helmet" ? 1.35f : name == "headscarf" ? 1.10f : name == "leaves" ? .98f : .93f);
+        _head.Scale = Vector2.One * (name == "helmet" ? 1.5f : name == "headscarf" ? 1.10f : name == "leaves" ? .98f : .93f);
+        _head.Material = null;
+        if (name == "helmet")
+        {
+            _head.Position = new Vector2(-1.875f, -41);
+            _helmetShader ??= GD.Load<Shader>("res://entities/portrait/helmet_openings.gdshader");
+            _helmetMaterial ??= new ShaderMaterial { Shader = _helmetShader };
+            _head.Material = _helmetMaterial;
+        }
         if (_species == Species.Human && _role != "Assassin") GetNode<Sprite2D>("Hair").Visible = name != "helmet" && name != "headscarf";
         Animator.RefreshVisuals();
     }

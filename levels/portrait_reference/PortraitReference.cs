@@ -31,8 +31,8 @@ public partial class PortraitReference : Node2D
             {
                 float x = 28 + i % 4 * 310, y = 95 + i / 4 * 285;
                 Text(names[i], new Vector2(x + 13, y + 10), 21);
-                Text("reference", new Vector2(x + 35, y + 43), 13);
-                Text("modular", new Vector2(x + 188, y + 43), 13);
+                Text("reference", new Vector2(x + 35, y + 36), 13);
+                Text("modular", new Vector2(x + 188, y + 36), 13);
                 var reference = new Sprite2D { Name = "Reference" + i, Centered = false,
                     Texture = GD.Load<Texture2D>($"res://resources/portrait/reference/example_01_{crops[i]}.png") };
                 float scale = 96 / widths[i]; reference.Scale = Vector2.One * scale;

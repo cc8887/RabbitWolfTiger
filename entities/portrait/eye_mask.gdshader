@@ -1,6 +1,6 @@
 shader_type canvas_item;
 // Both true source layers use the same eye-space aperture. No fabricated eye pixels.
-uniform sampler2D sclera_mask : filter_linear, repeat_disable;
+uniform sampler2D sclera_mask : filter_linear_mipmap, repeat_disable;
 uniform bool pupil_layer = false;
 uniform vec2 relative_size = vec2(1.0);
 uniform vec2 gaze_uv = vec2(0.0);

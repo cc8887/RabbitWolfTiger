@@ -57,6 +57,43 @@ public partial class PortraitIntegration : Node
             Check(closed, "Fully closed eyes must have zero aperture at every sampled slant and position.");
         }
     }
+    private void CheckHelmetEnvelope(ModularPortrait portrait)
+    {
+        var helmet = portrait.GetNode<Sprite2D>("HeadFront");
+        var material = (ShaderMaterial)helmet.Material;
+        Check(helmet.Texture.ResourcePath.EndsWith("helmet.png") && helmet.Texture.GetSize() == new Vector2(80, 87), "Guard must keep the original helmet source.");
+        Vector2 WindowParameter(string name)
+        {
+            Variant parameter = material.GetShaderParameter(name);
+            // Headless does not compile shader defaults. Read the actual shader declaration rather than changing production state.
+            var match = System.Text.RegularExpressions.Regex.Match(material.Shader.Code,
+                @"uniform\s+vec2\s+" + name + @"\s*=\s*vec2\(\s*([-0-9.]+)\s*,\s*([-0-9.]+)\s*\)");
+            Check(match.Success, "Missing actual helmet shader window declaration: " + name);
+            return parameter.VariantType != Variant.Type.Nil ? parameter.AsVector2() : new Vector2(float.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture),
+                float.Parse(match.Groups[2].Value, System.Globalization.CultureInfo.InvariantCulture));
+        }
+        Vector2 half = WindowParameter("half_size");
+        foreach (Vector2 gaze in new[] { Vector2.Zero, Vector2.Left, Vector2.Right, Vector2.Up, Vector2.Down, new Vector2(1, 1), new Vector2(-1, -1), new Vector2(1, -1), new Vector2(-1, 1) })
+        {
+            portrait.Animator.SetGaze(gaze); Advance(portrait.Animator, 30);
+            foreach (string side in new[] { "LeftEye", "RightEye" })
+            {
+                Vector2 center = WindowParameter(side == "LeftEye" ? "left_center" : "right_center");
+                foreach (string layer in new[] { "White", "Pupil" })
+                {
+                    var sprite = portrait.GetNode<Sprite2D>($"Eyes/{side}/{layer}");
+                    Rect2 rect = sprite.GetRect();
+                    foreach (Vector2 corner in new[] { rect.Position, rect.End, new Vector2(rect.Position.X, rect.End.Y), new Vector2(rect.End.X, rect.Position.Y) })
+                    {
+                        Vector2 pixel = helmet.ToLocal(sprite.ToGlobal(corner)) + helmet.Texture.GetSize() / 2;
+                        Vector2 distance = (pixel - center).Abs();
+                        Check(distance.X <= half.X - .35f && distance.Y <= half.Y - .35f,
+                            $"Guard {side}/{layer} envelope outside helmet opening: pixel={pixel}, center={center}, half={half}, gaze={gaze}");
+                    }
+                }
+            }
+        }
+    }
     private static string? Option(string name) => OS.GetCmdlineUserArgs()
         .FirstOrDefault(arg => arg.StartsWith(name + "="))?[(name.Length + 1)..];
 
@@ -72,6 +109,12 @@ public partial class PortraitIntegration : Node
             foreach (string? path in new[] { capture, framesDirectory })
                 if (path != null) Check(System.IO.Path.IsPathFullyQualified(path), "Capture destinations must be absolute.");
             CheckApertureContract();
+            foreach (string asset in new[] { "generated/pupil_black.svg", "generated/mouth_neutral_fork.svg", "generated/mouth_neutral_human.svg",
+                "generated/muzzle_double_lobe.svg", "generated/nose_heart_pink.svg", "art/02_eyes/sclera_blank.png" })
+            {
+                using Image imported = GD.Load<Texture2D>("res://resources/portrait/" + asset).GetImage();
+                Check(imported.HasMipmaps(), "Imported eye/facial texture must contain real mip levels: " + asset);
+            }
             var catalog = DietCatalog.FromJson(Godot.FileAccess.GetFileAsString("res://resources/diet/initial_diets.json"));
             Species[] species = { Species.Human, Species.Human, Species.Human, Species.Human,
                 Species.Rabbit, Species.Wolf, Species.Tiger, Species.Carrot };
@@ -105,33 +148,37 @@ public partial class PortraitIntegration : Node
             foreach (var portrait in portraits) { portrait.Animator.AutoBlink = false; Advance(portrait.Animator, 10); }
             string baseline = DietState(bodies);
             var materialIds = new HashSet<ulong>();
+            var helmetMaterialIds = new HashSet<ulong>();
             foreach (var portrait in portraits)
             {
                 var accents = portrait.GetNode<PortraitAccents>("Accents");
                 Check(accents.MuzzleCenter == portrait.Recipe.Muzzle && accents.MuzzleSize == portrait.Recipe.MuzzleSize,
                     "Muzzle must use the configured reference recipe.");
                 Check(accents.TigerCheeks == (species[Array.IndexOf(portraits, portrait)] == Species.Tiger), "Only the tiger recipe receives cheek markings.");
+                if (accents.TigerCheeks) Check(portrait.GetNode<Sprite2D>("Marking").Texture.ResourcePath.EndsWith("cross_mark.png"), "Tiger forehead must use the revised original cross marking.");
                 var muzzle = accents.GetNode<Sprite2D>("Muzzle");
-                Check(muzzle.Texture.ResourcePath.EndsWith("muzzle_double_lobe.svg") && muzzle.TextureFilter == CanvasItem.TextureFilterEnum.Linear &&
+                Check(muzzle.Texture.ResourcePath.EndsWith("muzzle_double_lobe.svg") && muzzle.TextureFilter == CanvasItem.TextureFilterEnum.LinearWithMipmaps &&
                     (portrait.Recipe.MuzzleSize.X == 0 || (muzzle.Texture.GetSize() * muzzle.Scale).IsEqualApprox(portrait.Recipe.MuzzleSize)) && muzzle.Position == portrait.Recipe.Muzzle &&
                     muzzle.Visible == (portrait.Recipe.MuzzleSize.X > 0), $"Double-lobed muzzle mismatch role={roles[Array.IndexOf(portraits, portrait)]}, texture={muzzle.Texture.ResourcePath}, filter={muzzle.TextureFilter}, size={muzzle.Texture.GetSize() * muzzle.Scale}, expected={portrait.Recipe.MuzzleSize}, position={muzzle.Position}, expectedPosition={portrait.Recipe.Muzzle}, visible={muzzle.Visible}");
                 var nose = portrait.GetNode<Sprite2D>("Nose");
-                Check(nose.Texture.ResourcePath.EndsWith("nose_heart_pink.svg") && nose.TextureFilter == CanvasItem.TextureFilterEnum.Linear &&
+                Check(nose.Texture.ResourcePath.EndsWith("nose_heart_pink.svg") && nose.TextureFilter == CanvasItem.TextureFilterEnum.LinearWithMipmaps &&
                     Math.Abs(nose.Texture.GetWidth() * nose.Scale.X - portrait.Recipe.NoseWidth) < .001f && nose.Position == portrait.Recipe.Nose,
                     "Heart-shaped nose SVG must match its explicit recipe and linear filtering.");
                 bool assassin = roles[Array.IndexOf(portraits, portrait)] == "Assassin";
                 var faceSprite = portrait.GetNode<Sprite2D>("Face");
                 Check(assassin ? faceSprite.Scale.IsEqualApprox(new Vector2(.93f, .68f)) && faceSprite.Position == new Vector2(0, -2) &&
-                    portrait.Recipe.EyeY == 1 && portrait.Recipe.Nose == new Vector2(0, 16) && portrait.Recipe.Mouth == new Vector2(0, 26) :
+                    portrait.Recipe.EyeY == 1 && portrait.Recipe.Nose == new Vector2(0, 16) && portrait.Recipe.Mouth == new Vector2(0, 22) :
                     faceSprite.Scale.IsEqualApprox(new Vector2(1, portrait.Recipe.FaceScaleY)) && faceSprite.Position == Vector2.Zero,
                     "Face registration must match the species recipe or the explicit Assassin role exception.");
                 Check(portrait.AvatarOnly && !portrait.GetNode<Sprite2D>("Body").Visible && !portrait.GetNode<Sprite2D>("Equipment").Visible,
                     "Reference-first avatars must hide body and equipment by default.");
+                if (roles[Array.IndexOf(portraits, portrait)] == "Guard") CheckHelmetEnvelope(portrait);
                 foreach (string side in new[] { "LeftEye", "RightEye" })
                 {
                     var white = portrait.GetNode<Sprite2D>($"Eyes/{side}/White");
                     var pupil = portrait.GetNode<Sprite2D>($"Eyes/{side}/Pupil");
                     Check(white.Texture != null && pupil.Texture != null && white != pupil, "Independent source eye layers required.");
+                    Check(white.TextureFilter == CanvasItem.TextureFilterEnum.LinearWithMipmaps && pupil.TextureFilter == CanvasItem.TextureFilterEnum.LinearWithMipmaps, "Both independent eye layers must explicitly use mipmapped linear filtering.");
                     Check(pupil.Texture!.ResourcePath.EndsWith("pupil_black.svg"), "Registered eye must use the newly identified black pupil component.");
                     var eye = portrait.GetNode<Node2D>($"Eyes/{side}");
                     Check(eye.Position.IsEqualApprox(new Vector2(side == "LeftEye" ? -portrait.Recipe.EyeX : portrait.Recipe.EyeX, portrait.Recipe.EyeY)), "Configured eyes must use the species-specific registration recipe.");
@@ -155,6 +202,7 @@ public partial class PortraitIntegration : Node
                     float neutralWidth = portrait.GameplayMouthSize switch { MouthSize.Large => 18, MouthSize.Medium => 14, _ => 10 };
                     float expressionWidth = (portrait.GameplayMouthSize switch { MouthSize.Large => 22, MouthSize.Medium => 16, _ => 10 }) * 1.35f;
                     var mouthSprite = portrait.GetNode<Sprite2D>("MouthPose");
+                    Check(mouthSprite.TextureFilter == CanvasItem.TextureFilterEnum.LinearWithMipmaps, "All expression mouth textures must explicitly use mipmapped filtering.");
                     Check(Math.Abs(mouthSprite.Texture.GetWidth() * mouthSprite.Scale.X - (expression == FaceExpression.Neutral ? neutralWidth : expressionWidth)) < .001f,
                         "Mouth visual width must match the explicit new reference registration, independently of eligibility.");
                     if (expression == FaceExpression.Neutral)
@@ -205,6 +253,15 @@ public partial class PortraitIntegration : Node
                 {
                     portrait.SetHeadPart(part);
                     Check(portrait.HeadPart == part && a.Expression == FaceExpression.Sad && a.Gaze == stableGaze, "Head-part replacement must preserve animation state.");
+                    var head = portrait.GetNode<Sprite2D>("HeadFront");
+                    if (part == "helmet")
+                    {
+                        Check(head.Material is ShaderMaterial && helmetMaterialIds.Add(head.Material!.GetInstanceId()), "Helmet cutout material must be independent for each portrait.");
+                        ulong identity = head.Material!.GetInstanceId();
+                        portrait.SetHeadPart("crown"); Check(head.Material == null, "Leaving helmet must clear its cutout material.");
+                        portrait.SetHeadPart("helmet"); Check(head.Material!.GetInstanceId() == identity, "Re-equipping helmet must reuse that portrait's material.");
+                    }
+                    else Check(head.Material == null, "Non-helmet head parts must not retain the helmet cutout material.");
                 }
                 var alternate = new DietBody(new FaceComponent(FaceColor.Gray), new MouthComponent(MouthSize.Large,
                     new[] { FaceColor.Skin, FaceColor.Cream, FaceColor.Orange }));

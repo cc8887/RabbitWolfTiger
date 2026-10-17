@@ -14,7 +14,7 @@ public partial class PortraitAccents : Node2D
         MuzzleCenter = recipe.Muzzle; MuzzleSize = recipe.MuzzleSize; TigerCheeks = tiger;
         var muzzle = GetNode<Sprite2D>("Muzzle");
         _muzzleTexture ??= GD.Load<Texture2D>("res://resources/portrait/generated/muzzle_double_lobe.svg");
-        muzzle.TextureFilter = TextureFilterEnum.Linear;
+        muzzle.TextureFilter = TextureFilterEnum.LinearWithMipmaps;
         muzzle.Texture = _muzzleTexture; muzzle.Position = MuzzleCenter;
         muzzle.Scale = MuzzleSize / _muzzleTexture.GetSize(); muzzle.Visible = MuzzleSize.X > 0;
         QueueRedraw();
