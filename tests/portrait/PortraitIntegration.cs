@@ -222,6 +222,26 @@ public partial class PortraitIntegration : Node
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
             foreach (Label label in gallery.GetChildren().OfType<Label>())
                 Check(label.GetGlobalRect().End.X <= 1280 && label.GetGlobalRect().End.Y <= 720, "Gallery text extends outside viewport.");
+            // Exhaust every face/mouth template combination using real font metrics and card geometry.
+            for (int faceCycle = 0; faceCycle < 5; faceCycle++)
+            {
+                gallery.SwapFaces();
+                for (int mouthCycle = 0; mouthCycle < 5; mouthCycle++)
+                {
+                    gallery.SwapMouths();
+                    await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+                    for (int card = 0; card < 8; card++)
+                    {
+                        Label detail = gallery.GetNode<Label>($"Details{card}");
+                        Vector2 cardEnd = new Vector2(28 + card % 4 * 310 + 292, 140 + card / 4 * 250 + 240);
+                        Rect2 actual = detail.GetGlobalRect();
+                        Vector2 minimumEnd = detail.GlobalPosition + detail.GetCombinedMinimumSize();
+                        Check(actual.End.X <= cardEnd.X && actual.End.Y <= cardEnd.Y &&
+                            minimumEnd.X <= cardEnd.X && minimumEnd.Y <= cardEnd.Y,
+                            $"Card {card} text overflow: '{detail.Text}' rect={actual}; minimum={detail.GetCombinedMinimumSize()}; cardEnd={cardEnd}");
+                    }
+                }
+            }
             gallery.QueueFree(); await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
             gallery = galleryScene.Instantiate<PortraitGallery>(); AddChild(gallery);
             foreach (var portrait in gallery.Portraits) { portrait.Animator.SetProcess(false); portrait.Animator.FollowPointer = false; portrait.Animator.AutoBlink = false; Advance(portrait.Animator, 25); }

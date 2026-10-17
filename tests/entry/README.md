@@ -20,5 +20,7 @@ For an actual image of the configured default entry, before test navigation:
 
     godot --display-driver x11 --rendering-method gl_compatibility --path . tests/entry/default_entry_integration.tscn -- --capture-entry=/absolute/default-entry.png
 
+The screenshot waits an additional 0.5 seconds for the default startup expression transition
+to settle through the real `_Process`, without overriding poses or manually advancing animation.
 Require `ENTRY_CAPTURE:` and a nonempty 1280x720 PNG. Headless/dummy capture is refused.
 Headless state checks alone do not satisfy final visual acceptance; inspect the real PNG.

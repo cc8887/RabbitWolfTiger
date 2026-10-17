@@ -47,7 +47,6 @@ public partial class PortraitGallery : Node2D
         {
             float x = 28 + (i % 4) * 310; float y = 140 + (i / 4) * 250;
             Label(_names[i], new Vector2(x + 18, y + 12), 22, "f4dfbb");
-            Label(i < 4 ? "ANIMAL / PRODUCE" : "HUMAN · SKIN", new Vector2(x + 18, y + 43), 12, "91a1b8");
             _expressions[i] = Label("", new Vector2(x + 190, y + 46), 13, "e7c78f");
             int selected = i;
             Button("Select", "Select" + i, new Vector2(x + 207, y + 10), 70, () => SelectPortrait(selected));
@@ -56,7 +55,7 @@ public partial class PortraitGallery : Node2D
             AddChild(portrait); Portraits[i] = portrait;
             portrait.Configure(_species[i], _names[i], Bodies[i]);
             portrait.Animator.SetExpression((FaceExpression)(i % 5));
-            _details[i] = Label("", new Vector2(x + 13, y + 207), 13, "d6ddea");
+            _details[i] = Label("", new Vector2(x + 13, y + 200), 13, "d6ddea");
             _details[i].Name = "Details" + i;
         }
         Button("Swap faces", "SwapFaces", new Vector2(28, 650), 150, SwapFaces);

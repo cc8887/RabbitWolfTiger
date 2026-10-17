@@ -61,12 +61,14 @@ public partial class DefaultEntryIntegration : Node
             GD.Print($"[ENTRY] Configured entry loaded: {configured}; 8 portraits");
             if (capture != null)
             {
+                // Let the actual default scene transition naturally; no pose overrides or manual animation stepping.
+                await ToSignal(GetTree().CreateTimer(0.5), SceneTreeTimer.SignalName.Timeout);
                 // Capture the unmodified entry before any navigation or test-selected expression.
                 await ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
                 Image image = GetViewport().GetTexture().GetImage();
                 Check(!image.IsEmpty() && image.GetWidth() == 1280 && image.GetHeight() == 720, "Entry image must be a rendered 1280x720 frame.");
                 Check(image.SavePng(capture) == Error.Ok, "Entry screenshot could not be saved.");
-                GD.Print($"ENTRY_CAPTURE: {capture}");
+                GD.Print($"ENTRY_CAPTURE: {capture} (sampled after 0.5s natural startup settling; real _Process)");
             }
             await Click(gallery.GetNode<Button>("ExpressionHappy"));
             Check(gallery.Portraits.All(p => p.Animator.Expression == FaceExpression.Happy), "Default entry expression controls must work.");
