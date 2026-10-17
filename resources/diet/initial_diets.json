@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "humanMouthStatus": "Provisional: None until the human diet is confirmed.",
+  "templates": [
+    { "species": "Human", "faceColor": "Skin", "mouthSize": "None", "edibleColors": [] },
+    { "species": "Rabbit", "faceColor": "Cream", "mouthSize": "Small", "edibleColors": ["Orange"] },
+    { "species": "Wolf", "faceColor": "Gray", "mouthSize": "Medium", "edibleColors": ["Cream", "Skin"] },
+    { "species": "Carrot", "faceColor": "Orange", "mouthSize": "None", "edibleColors": [] },
+    { "species": "Tiger", "faceColor": "GoldenOrange", "mouthSize": "Large", "edibleColors": ["Gray", "Cream", "Skin"] }
+  ]
+}

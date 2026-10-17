@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-10-17T03:15:00Z",
+  "source_sha256": "30a6c627cae3ffaa7c9c4ba19fc4905bd923384a95115399745aa0ff040840a7",
+  "sprite_count": 105,
+  "component_and_composite_count": 79,
+  "reference_count": 26,
+  "composite_eye_count": 11,
+  "pixel_fidelity": "105/105 original crop regions match source RGBA byte-for-byte",
+  "significant_alpha_bbox": "All 79 component/composite alpha>=32 bounds are strictly inside output canvas",
+  "visual_qa": [
+    "Gray contactsheet inspected",
+    "Black contactsheet inspected",
+    "White contactsheet inspected",
+    "Checker contactsheet inspected"
+  ],
+  "corrections": [
+    "Spear and dagger lower crop boundaries shortened to exclude label fragments",
+    "Necklace lower crop boundary shortened to exclude label fragments",
+    "Left blush right source boundary shortened to exclude neighboring circle edge",
+    "Brown pupil top source edge shortened while keeping original output canvas and pivot"
+  ],
+  "limitations": [
+    "Low-alpha source background noise and colored edge RGB retained",
+    "No pure-black standalone round pupil exists in original",
+    "11 composite eyes do not have recoverable hidden white or pupil layers"
+  ]
+}

@@ -6,4 +6,8 @@
     <LangVersion>12</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="tests/diet/Program.cs;tests/diet/obj/**/*.cs;tests/diet/bin/**/*.cs" />
+  </ItemGroup>
 </Project>
+

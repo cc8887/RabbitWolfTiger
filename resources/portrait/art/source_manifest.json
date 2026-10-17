@@ -1,0 +1,5611 @@
+{
+  "source_filename": "reference.png",
+  "source_sha256": "30a6c627cae3ffaa7c9c4ba19fc4905bd923384a95115399745aa0ff040840a7",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "source_mode": "RGBA",
+  "alpha_range": [
+    0,
+    254
+  ],
+  "alpha_histogram": {
+    "0": 595164,
+    "1": 218419,
+    "2": 74222,
+    "3": 34943,
+    "4": 19337,
+    "5": 11804,
+    "6": 7888,
+    "7": 5680,
+    "8": 4428,
+    "9": 3707,
+    "10": 3105,
+    "11": 2362,
+    "12": 2005,
+    "13": 1792,
+    "14": 1518,
+    "15": 1587,
+    "16": 1316,
+    "17": 1387,
+    "18": 1362,
+    "19": 1422,
+    "20": 1528,
+    "21": 1484,
+    "22": 1394,
+    "23": 1336,
+    "24": 1154,
+    "25": 1013,
+    "26": 885,
+    "27": 785,
+    "28": 790,
+    "29": 708,
+    "30": 716,
+    "31": 643,
+    "32": 673,
+    "33": 572,
+    "34": 621,
+    "35": 633,
+    "36": 615,
+    "37": 580,
+    "38": 626,
+    "39": 594,
+    "40": 597,
+    "41": 555,
+    "42": 545,
+    "43": 523,
+    "44": 514,
+    "45": 504,
+    "46": 510,
+    "47": 485,
+    "48": 478,
+    "49": 456,
+    "50": 428,
+    "51": 463,
+    "52": 419,
+    "53": 428,
+    "54": 392,
+    "55": 378,
+    "56": 365,
+    "57": 360,
+    "58": 340,
+    "59": 325,
+    "60": 322,
+    "61": 280,
+    "62": 300,
+    "63": 340,
+    "64": 256,
+    "65": 253,
+    "66": 240,
+    "67": 259,
+    "68": 274,
+    "69": 269,
+    "70": 235,
+    "71": 234,
+    "72": 232,
+    "73": 232,
+    "74": 262,
+    "75": 227,
+    "76": 252,
+    "77": 234,
+    "78": 248,
+    "79": 233,
+    "80": 235,
+    "81": 240,
+    "82": 195,
+    "83": 247,
+    "84": 241,
+    "85": 220,
+    "86": 217,
+    "87": 247,
+    "88": 207,
+    "89": 212,
+    "90": 247,
+    "91": 250,
+    "92": 217,
+    "93": 234,
+    "94": 212,
+    "95": 232,
+    "96": 197,
+    "97": 240,
+    "98": 202,
+    "99": 212,
+    "100": 231,
+    "101": 218,
+    "102": 224,
+    "103": 210,
+    "104": 231,
+    "105": 229,
+    "106": 251,
+    "107": 191,
+    "108": 220,
+    "109": 194,
+    "110": 211,
+    "111": 231,
+    "112": 231,
+    "113": 219,
+    "114": 204,
+    "115": 239,
+    "116": 213,
+    "117": 205,
+    "118": 219,
+    "119": 220,
+    "120": 202,
+    "121": 192,
+    "122": 206,
+    "123": 196,
+    "124": 218,
+    "125": 198,
+    "126": 209,
+    "127": 190,
+    "128": 202,
+    "129": 196,
+    "130": 211,
+    "131": 199,
+    "132": 208,
+    "133": 210,
+    "134": 208,
+    "135": 235,
+    "136": 203,
+    "137": 196,
+    "138": 216,
+    "139": 220,
+    "140": 187,
+    "141": 196,
+    "142": 185,
+    "143": 211,
+    "144": 224,
+    "145": 222,
+    "146": 217,
+    "147": 217,
+    "148": 217,
+    "149": 187,
+    "150": 230,
+    "151": 219,
+    "152": 226,
+    "153": 218,
+    "154": 240,
+    "155": 229,
+    "156": 213,
+    "157": 220,
+    "158": 218,
+    "159": 244,
+    "160": 228,
+    "161": 232,
+    "162": 230,
+    "163": 261,
+    "164": 262,
+    "165": 282,
+    "166": 270,
+    "167": 250,
+    "168": 286,
+    "169": 289,
+    "170": 264,
+    "171": 260,
+    "172": 275,
+    "173": 288,
+    "174": 275,
+    "175": 257,
+    "176": 232,
+    "177": 241,
+    "178": 255,
+    "179": 242,
+    "180": 290,
+    "181": 273,
+    "182": 265,
+    "183": 283,
+    "184": 307,
+    "185": 249,
+    "186": 266,
+    "187": 305,
+    "188": 290,
+    "189": 250,
+    "190": 261,
+    "191": 277,
+    "192": 272,
+    "193": 271,
+    "194": 278,
+    "195": 263,
+    "196": 281,
+    "197": 266,
+    "198": 261,
+    "199": 303,
+    "200": 302,
+    "201": 295,
+    "202": 290,
+    "203": 273,
+    "204": 283,
+    "205": 330,
+    "206": 302,
+    "207": 332,
+    "208": 333,
+    "209": 302,
+    "210": 316,
+    "211": 333,
+    "212": 317,
+    "213": 350,
+    "214": 351,
+    "215": 365,
+    "216": 371,
+    "217": 401,
+    "218": 348,
+    "219": 361,
+    "220": 424,
+    "221": 420,
+    "222": 465,
+    "223": 482,
+    "224": 477,
+    "225": 510,
+    "226": 595,
+    "227": 522,
+    "228": 573,
+    "229": 632,
+    "230": 623,
+    "231": 660,
+    "232": 681,
+    "233": 710,
+    "234": 761,
+    "235": 866,
+    "236": 900,
+    "237": 1068,
+    "238": 1249,
+    "239": 1442,
+    "240": 1648,
+    "241": 2114,
+    "242": 2771,
+    "243": 3497,
+    "244": 4513,
+    "245": 6146,
+    "246": 8182,
+    "247": 10986,
+    "248": 14029,
+    "249": 20553,
+    "250": 31828,
+    "251": 53887,
+    "252": 112482,
+    "253": 217200,
+    "254": 9348
+  },
+  "rect_convention": "[left, top, right, bottom], right/bottom exclusive, source top-left origin",
+  "counts": {
+    "01_faces": 5,
+    "02_eyes": 19,
+    "03_noses": 6,
+    "04_mouths": 10,
+    "05_head_parts": 14,
+    "06_markings": 13,
+    "07_body_equipment": 12,
+    "reference": 26
+  },
+  "total_files": 105,
+  "component_and_composite_files": 79,
+  "runtime_guidance": "Keep native canvas dimensions and pivot. Composite eye shapes cannot be independently animated as white/pupil layers. Use sclera_blank plus pupil_* for independent gaze.",
+  "assets": [
+    {
+      "id": "face_rabbit_cream",
+      "file": "01_faces/face_rabbit_cream.png",
+      "section": "01_faces",
+      "status": "component",
+      "slot": "face",
+      "source_rect_xyxy": [
+        19,
+        67,
+        132,
+        181
+      ],
+      "source_crop_size": [
+        113,
+        114
+      ],
+      "source_canvas_rect_xyxy": [
+        19,
+        67,
+        132,
+        181
+      ],
+      "output_size": [
+        113,
+        114
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        113,
+        114
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        108,
+        109
+      ],
+      "pivot_xy": [
+        56.5,
+        57.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "face_wolf_gray",
+      "file": "01_faces/face_wolf_gray.png",
+      "section": "01_faces",
+      "status": "component",
+      "slot": "face",
+      "source_rect_xyxy": [
+        135,
+        67,
+        247,
+        181
+      ],
+      "source_crop_size": [
+        112,
+        114
+      ],
+      "source_canvas_rect_xyxy": [
+        135,
+        67,
+        247,
+        181
+      ],
+      "output_size": [
+        112,
+        114
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        112,
+        114
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        6,
+        108,
+        109
+      ],
+      "pivot_xy": [
+        56.0,
+        57.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "face_carrot_orange",
+      "file": "01_faces/face_carrot_orange.png",
+      "section": "01_faces",
+      "status": "component",
+      "slot": "face",
+      "source_rect_xyxy": [
+        248,
+        67,
+        361,
+        181
+      ],
+      "source_crop_size": [
+        113,
+        114
+      ],
+      "source_canvas_rect_xyxy": [
+        248,
+        67,
+        361,
+        181
+      ],
+      "output_size": [
+        113,
+        114
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        113,
+        114
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        7,
+        6,
+        110,
+        110
+      ],
+      "pivot_xy": [
+        56.5,
+        57.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "face_tiger_orange",
+      "file": "01_faces/face_tiger_orange.png",
+      "section": "01_faces",
+      "status": "component",
+      "slot": "face",
+      "source_rect_xyxy": [
+        366,
+        67,
+        479,
+        181
+      ],
+      "source_crop_size": [
+        113,
+        114
+      ],
+      "source_canvas_rect_xyxy": [
+        366,
+        67,
+        479,
+        181
+      ],
+      "output_size": [
+        113,
+        114
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        113,
+        114
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        7,
+        107,
+        110
+      ],
+      "pivot_xy": [
+        56.5,
+        57.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "face_human_skin",
+      "file": "01_faces/face_human_skin.png",
+      "section": "01_faces",
+      "status": "component",
+      "slot": "face",
+      "source_rect_xyxy": [
+        482,
+        67,
+        596,
+        181
+      ],
+      "source_crop_size": [
+        114,
+        114
+      ],
+      "source_canvas_rect_xyxy": [
+        482,
+        67,
+        596,
+        181
+      ],
+      "output_size": [
+        114,
+        114
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        114,
+        114
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        109,
+        110
+      ],
+      "pivot_xy": [
+        57.0,
+        57.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "sclera_blank",
+      "file": "02_eyes/sclera_blank.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.sclera",
+      "source_rect_xyxy": [
+        749,
+        61,
+        817,
+        130
+      ],
+      "source_crop_size": [
+        68,
+        69
+      ],
+      "source_canvas_rect_xyxy": [
+        749,
+        61,
+        817,
+        130
+      ],
+      "output_size": [
+        68,
+        69
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        68,
+        69
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        5,
+        64,
+        64
+      ],
+      "pivot_xy": [
+        34.0,
+        34.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Only genuinely pupil-free sclera in source. Reuse for both eyes; do not erase baked-in pupils from other eyes.",
+      "eye_alignment": {
+        "center_xy": [
+          34,
+          34.5
+        ],
+        "suggested_pupil_center_xy": [
+          34,
+          34.5
+        ],
+        "pupil_scale": 0.65,
+        "clipping": "Clip independent pupil to sclera alpha in runtime. Suggested scale is not baked into pixels."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_baked_half_top",
+      "file": "02_eyes/eye_baked_half_top.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        830,
+        60,
+        901,
+        130
+      ],
+      "source_crop_size": [
+        71,
+        70
+      ],
+      "source_canvas_rect_xyxy": [
+        830,
+        60,
+        901,
+        130
+      ],
+      "output_size": [
+        71,
+        70
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        71,
+        70
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        6,
+        65,
+        65
+      ],
+      "pivot_xy": [
+        35.5,
+        35.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "White and black pupil are baked together; cannot recover underlying white without repainting.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_baked_round_top",
+      "file": "02_eyes/eye_baked_round_top.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        917,
+        60,
+        988,
+        130
+      ],
+      "source_crop_size": [
+        71,
+        70
+      ],
+      "source_canvas_rect_xyxy": [
+        917,
+        60,
+        988,
+        130
+      ],
+      "output_size": [
+        71,
+        70
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        71,
+        70
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        63,
+        66
+      ],
+      "pivot_xy": [
+        35.5,
+        35.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "White and black pupil are baked together.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_brown",
+      "file": "02_eyes/pupil_brown.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        628,
+        159,
+        680,
+        211
+      ],
+      "source_crop_size": [
+        52,
+        52
+      ],
+      "source_canvas_rect_xyxy": [
+        628,
+        156,
+        680,
+        211
+      ],
+      "output_size": [
+        52,
+        55
+      ],
+      "source_offset_xy": [
+        0,
+        3
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        3,
+        52,
+        55
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        48,
+        49
+      ],
+      "pivot_xy": [
+        26.0,
+        27.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          26.0,
+          27.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_tan",
+      "file": "02_eyes/pupil_tan.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        683,
+        156,
+        736,
+        211
+      ],
+      "source_crop_size": [
+        53,
+        55
+      ],
+      "source_canvas_rect_xyxy": [
+        683,
+        156,
+        736,
+        211
+      ],
+      "output_size": [
+        53,
+        55
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        53,
+        55
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        5,
+        49,
+        50
+      ],
+      "pivot_xy": [
+        26.5,
+        27.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          26.5,
+          27.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_blue",
+      "file": "02_eyes/pupil_blue.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        739,
+        156,
+        791,
+        211
+      ],
+      "source_crop_size": [
+        52,
+        55
+      ],
+      "source_canvas_rect_xyxy": [
+        739,
+        156,
+        791,
+        211
+      ],
+      "output_size": [
+        52,
+        55
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        52,
+        55
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        49,
+        50
+      ],
+      "pivot_xy": [
+        26.0,
+        27.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          26.0,
+          27.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_green",
+      "file": "02_eyes/pupil_green.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        795,
+        156,
+        847,
+        211
+      ],
+      "source_crop_size": [
+        52,
+        55
+      ],
+      "source_canvas_rect_xyxy": [
+        795,
+        156,
+        847,
+        211
+      ],
+      "output_size": [
+        52,
+        55
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        52,
+        55
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        50,
+        50
+      ],
+      "pivot_xy": [
+        26.0,
+        27.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          26.0,
+          27.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_gold",
+      "file": "02_eyes/pupil_gold.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        852,
+        156,
+        905,
+        211
+      ],
+      "source_crop_size": [
+        53,
+        55
+      ],
+      "source_canvas_rect_xyxy": [
+        852,
+        156,
+        905,
+        211
+      ],
+      "output_size": [
+        53,
+        55
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        3,
+        53,
+        55
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        50,
+        50
+      ],
+      "pivot_xy": [
+        26.5,
+        27.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          26.5,
+          27.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_slit",
+      "file": "02_eyes/pupil_slit.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        914,
+        155,
+        940,
+        214
+      ],
+      "source_crop_size": [
+        26,
+        59
+      ],
+      "source_canvas_rect_xyxy": [
+        914,
+        155,
+        940,
+        214
+      ],
+      "output_size": [
+        26,
+        59
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        3,
+        26,
+        59
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        5,
+        22,
+        53
+      ],
+      "pivot_xy": [
+        13.0,
+        29.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          13.0,
+          29.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pupil_star",
+      "file": "02_eyes/pupil_star.png",
+      "section": "02_eyes",
+      "status": "component",
+      "slot": "eye.pupil",
+      "source_rect_xyxy": [
+        951,
+        155,
+        995,
+        214
+      ],
+      "source_crop_size": [
+        44,
+        59
+      ],
+      "source_canvas_rect_xyxy": [
+        951,
+        155,
+        995,
+        214
+      ],
+      "output_size": [
+        44,
+        59
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        2,
+        44,
+        57
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        39,
+        53
+      ],
+      "pivot_xy": [
+        22.0,
+        29.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "eye_alignment": {
+        "anchor_xy": [
+          22.0,
+          29.5
+        ],
+        "target": "sclera_blank center_xy",
+        "independent_translation": true,
+        "note": "Colored round items include iris and black pupil as one source layer."
+      },
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_heart_baked",
+      "file": "02_eyes/eye_heart_baked.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        998,
+        155,
+        1055,
+        214
+      ],
+      "source_crop_size": [
+        57,
+        59
+      ],
+      "source_canvas_rect_xyxy": [
+        998,
+        155,
+        1055,
+        214
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        57,
+        59
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        3,
+        4,
+        53,
+        54
+      ],
+      "pivot_xy": [
+        28.5,
+        29.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Heart pupil is baked into a white disk; retained intact, not falsely labeled independent pupil.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_normal",
+      "file": "02_eyes/eye_shape_normal.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        630,
+        252,
+        681,
+        305
+      ],
+      "source_crop_size": [
+        51,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        630,
+        252,
+        681,
+        305
+      ],
+      "output_size": [
+        51,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        51,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        3,
+        3,
+        49,
+        49
+      ],
+      "pivot_xy": [
+        25.5,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_surprised",
+      "file": "02_eyes/eye_shape_surprised.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        684,
+        252,
+        736,
+        305
+      ],
+      "source_crop_size": [
+        52,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        684,
+        252,
+        736,
+        305
+      ],
+      "output_size": [
+        52,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        52,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        3,
+        3,
+        49,
+        49
+      ],
+      "pivot_xy": [
+        26.0,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_half",
+      "file": "02_eyes/eye_shape_half.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        739,
+        252,
+        790,
+        305
+      ],
+      "source_crop_size": [
+        51,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        739,
+        252,
+        790,
+        305
+      ],
+      "output_size": [
+        51,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        51,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        4,
+        48,
+        49
+      ],
+      "pivot_xy": [
+        25.5,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_sleepy",
+      "file": "02_eyes/eye_shape_sleepy.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        793,
+        252,
+        845,
+        305
+      ],
+      "source_crop_size": [
+        52,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        793,
+        252,
+        845,
+        305
+      ],
+      "output_size": [
+        52,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        52,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        4,
+        48,
+        49
+      ],
+      "pivot_xy": [
+        26.0,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_up",
+      "file": "02_eyes/eye_shape_up.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        847,
+        252,
+        898,
+        305
+      ],
+      "source_crop_size": [
+        51,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        847,
+        252,
+        898,
+        305
+      ],
+      "output_size": [
+        51,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        51,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        4,
+        47,
+        49
+      ],
+      "pivot_xy": [
+        25.5,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_down",
+      "file": "02_eyes/eye_shape_down.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        900,
+        252,
+        951,
+        305
+      ],
+      "source_crop_size": [
+        51,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        900,
+        252,
+        951,
+        305
+      ],
+      "output_size": [
+        51,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        51,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        4,
+        47,
+        49
+      ],
+      "pivot_xy": [
+        25.5,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_happy",
+      "file": "02_eyes/eye_shape_happy.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        953,
+        252,
+        1004,
+        305
+      ],
+      "source_crop_size": [
+        51,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        953,
+        252,
+        1004,
+        305
+      ],
+      "output_size": [
+        51,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        2,
+        51,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        4,
+        48,
+        49
+      ],
+      "pivot_xy": [
+        25.5,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "eye_shape_closed",
+      "file": "02_eyes/eye_shape_closed.png",
+      "section": "02_eyes",
+      "status": "composite",
+      "slot": "eye.composite",
+      "source_rect_xyxy": [
+        1007,
+        252,
+        1057,
+        305
+      ],
+      "source_crop_size": [
+        50,
+        53
+      ],
+      "source_canvas_rect_xyxy": [
+        1007,
+        252,
+        1057,
+        305
+      ],
+      "output_size": [
+        50,
+        53
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        50,
+        53
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        1,
+        4,
+        47,
+        49
+      ],
+      "pivot_xy": [
+        25.0,
+        26.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Source eye-shape preview, including its white fill and baked mark/pupil. Not a separated eyelid overlay; no hidden pixels reconstructed.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "nose_triangle_pink",
+      "file": "03_noses/nose_triangle_pink.png",
+      "section": "03_noses",
+      "status": "component",
+      "slot": "nose",
+      "source_rect_xyxy": [
+        1083,
+        58,
+        1137,
+        110
+      ],
+      "source_crop_size": [
+        54,
+        52
+      ],
+      "source_canvas_rect_xyxy": [
+        1083,
+        58,
+        1137,
+        110
+      ],
+      "output_size": [
+        54,
+        52
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        4,
+        53,
+        52
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        49,
+        45
+      ],
+      "pivot_xy": [
+        27.0,
+        26.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "nose_triangle_black",
+      "file": "03_noses/nose_triangle_black.png",
+      "section": "03_noses",
+      "status": "component",
+      "slot": "nose",
+      "source_rect_xyxy": [
+        1153,
+        58,
+        1207,
+        110
+      ],
+      "source_crop_size": [
+        54,
+        52
+      ],
+      "source_canvas_rect_xyxy": [
+        1153,
+        58,
+        1207,
+        110
+      ],
+      "output_size": [
+        54,
+        52
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        4,
+        52,
+        52
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        49,
+        45
+      ],
+      "pivot_xy": [
+        27.0,
+        26.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "nose_triangle_orange",
+      "file": "03_noses/nose_triangle_orange.png",
+      "section": "03_noses",
+      "status": "component",
+      "slot": "nose",
+      "source_rect_xyxy": [
+        1226,
+        58,
+        1279,
+        110
+      ],
+      "source_crop_size": [
+        53,
+        52
+      ],
+      "source_canvas_rect_xyxy": [
+        1226,
+        58,
+        1279,
+        110
+      ],
+      "output_size": [
+        53,
+        52
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        2,
+        53,
+        52
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        47,
+        45
+      ],
+      "pivot_xy": [
+        26.5,
+        26.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "nose_round_brown",
+      "file": "03_noses/nose_round_brown.png",
+      "section": "03_noses",
+      "status": "component",
+      "slot": "nose",
+      "source_rect_xyxy": [
+        1320,
+        60,
+        1372,
+        108
+      ],
+      "source_crop_size": [
+        52,
+        48
+      ],
+      "source_canvas_rect_xyxy": [
+        1320,
+        60,
+        1372,
+        108
+      ],
+      "output_size": [
+        52,
+        48
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        3,
+        52,
+        48
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        5,
+        46,
+        41
+      ],
+      "pivot_xy": [
+        26.0,
+        24.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "nose_round_pink",
+      "file": "03_noses/nose_round_pink.png",
+      "section": "03_noses",
+      "status": "component",
+      "slot": "nose",
+      "source_rect_xyxy": [
+        1389,
+        60,
+        1439,
+        107
+      ],
+      "source_crop_size": [
+        50,
+        47
+      ],
+      "source_canvas_rect_xyxy": [
+        1389,
+        60,
+        1439,
+        107
+      ],
+      "output_size": [
+        50,
+        47
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        2,
+        2,
+        50,
+        47
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        8,
+        5,
+        42,
+        40
+      ],
+      "pivot_xy": [
+        25.0,
+        23.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "nose_heart_cream",
+      "file": "03_noses/nose_heart_cream.png",
+      "section": "03_noses",
+      "status": "component",
+      "slot": "nose",
+      "source_rect_xyxy": [
+        1452,
+        58,
+        1509,
+        107
+      ],
+      "source_crop_size": [
+        57,
+        49
+      ],
+      "source_canvas_rect_xyxy": [
+        1452,
+        58,
+        1509,
+        107
+      ],
+      "output_size": [
+        57,
+        49
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        4,
+        57,
+        49
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        7,
+        52,
+        44
+      ],
+      "pivot_xy": [
+        28.5,
+        24.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_open_large",
+      "file": "04_mouths/mouth_open_large.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1097,
+        194,
+        1167,
+        240
+      ],
+      "source_crop_size": [
+        70,
+        46
+      ],
+      "source_canvas_rect_xyxy": [
+        1097,
+        194,
+        1167,
+        240
+      ],
+      "output_size": [
+        70,
+        46
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        70,
+        46
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        4,
+        65,
+        41
+      ],
+      "pivot_xy": [
+        35.0,
+        23.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_open_medium",
+      "file": "04_mouths/mouth_open_medium.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1188,
+        199,
+        1241,
+        241
+      ],
+      "source_crop_size": [
+        53,
+        42
+      ],
+      "source_canvas_rect_xyxy": [
+        1188,
+        199,
+        1241,
+        241
+      ],
+      "output_size": [
+        53,
+        42
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        53,
+        42
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        4,
+        49,
+        32
+      ],
+      "pivot_xy": [
+        26.5,
+        21.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_open_small",
+      "file": "04_mouths/mouth_open_small.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1272,
+        199,
+        1319,
+        239
+      ],
+      "source_crop_size": [
+        47,
+        40
+      ],
+      "source_canvas_rect_xyxy": [
+        1272,
+        199,
+        1319,
+        239
+      ],
+      "output_size": [
+        47,
+        40
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        4,
+        0,
+        42,
+        40
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        7,
+        4,
+        39,
+        29
+      ],
+      "pivot_xy": [
+        23.5,
+        20.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_open_tiny",
+      "file": "04_mouths/mouth_open_tiny.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1360,
+        198,
+        1404,
+        229
+      ],
+      "source_crop_size": [
+        44,
+        31
+      ],
+      "source_canvas_rect_xyxy": [
+        1360,
+        198,
+        1404,
+        229
+      ],
+      "output_size": [
+        44,
+        31
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        44,
+        31
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        7,
+        6,
+        38,
+        24
+      ],
+      "pivot_xy": [
+        22.0,
+        15.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_line_cream",
+      "file": "04_mouths/mouth_line_cream.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1433,
+        199,
+        1507,
+        222
+      ],
+      "source_crop_size": [
+        74,
+        23
+      ],
+      "source_canvas_rect_xyxy": [
+        1433,
+        199,
+        1507,
+        222
+      ],
+      "output_size": [
+        74,
+        23
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        74,
+        23
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        71,
+        17
+      ],
+      "pivot_xy": [
+        37.0,
+        11.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_smile",
+      "file": "04_mouths/mouth_smile.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1100,
+        270,
+        1159,
+        306
+      ],
+      "source_crop_size": [
+        59,
+        36
+      ],
+      "source_canvas_rect_xyxy": [
+        1100,
+        270,
+        1159,
+        306
+      ],
+      "output_size": [
+        59,
+        36
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        59,
+        36
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        12,
+        58,
+        32
+      ],
+      "pivot_xy": [
+        29.5,
+        18.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_frown",
+      "file": "04_mouths/mouth_frown.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1187,
+        272,
+        1249,
+        304
+      ],
+      "source_crop_size": [
+        62,
+        32
+      ],
+      "source_canvas_rect_xyxy": [
+        1187,
+        272,
+        1249,
+        304
+      ],
+      "output_size": [
+        62,
+        32
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        61,
+        32
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        58,
+        27
+      ],
+      "pivot_xy": [
+        31.0,
+        16.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_flat",
+      "file": "04_mouths/mouth_flat.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1273,
+        280,
+        1330,
+        299
+      ],
+      "source_crop_size": [
+        57,
+        19
+      ],
+      "source_canvas_rect_xyxy": [
+        1273,
+        280,
+        1330,
+        299
+      ],
+      "output_size": [
+        57,
+        19
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        2,
+        57,
+        19
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        7,
+        54,
+        15
+      ],
+      "pivot_xy": [
+        28.5,
+        9.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_teeth",
+      "file": "04_mouths/mouth_teeth.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1359,
+        270,
+        1417,
+        306
+      ],
+      "source_crop_size": [
+        58,
+        36
+      ],
+      "source_canvas_rect_xyxy": [
+        1359,
+        270,
+        1417,
+        306
+      ],
+      "output_size": [
+        58,
+        36
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        58,
+        36
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        6,
+        54,
+        35
+      ],
+      "pivot_xy": [
+        29.0,
+        18.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mouth_tongue",
+      "file": "04_mouths/mouth_tongue.png",
+      "section": "04_mouths",
+      "status": "component",
+      "slot": "mouth",
+      "source_rect_xyxy": [
+        1445,
+        273,
+        1507,
+        309
+      ],
+      "source_crop_size": [
+        62,
+        36
+      ],
+      "source_canvas_rect_xyxy": [
+        1445,
+        273,
+        1507,
+        309
+      ],
+      "output_size": [
+        62,
+        36
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        62,
+        36
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        6,
+        56,
+        32
+      ],
+      "pivot_xy": [
+        31.0,
+        18.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "rabbit_ear_left",
+      "file": "05_head_parts/rabbit_ear_left.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.ear.left",
+      "source_rect_xyxy": [
+        31,
+        395,
+        74,
+        469
+      ],
+      "source_crop_size": [
+        43,
+        74
+      ],
+      "source_canvas_rect_xyxy": [
+        31,
+        395,
+        114,
+        469
+      ],
+      "output_size": [
+        83,
+        74
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        43,
+        74
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        5,
+        35,
+        69
+      ],
+      "pivot_xy": [
+        41.5,
+        74
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Left/right means image side. Both files share full pair canvas and lower-center pivot; do not trim independently.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "rabbit_ear_right",
+      "file": "05_head_parts/rabbit_ear_right.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.ear.right",
+      "source_rect_xyxy": [
+        76,
+        395,
+        114,
+        469
+      ],
+      "source_crop_size": [
+        38,
+        74
+      ],
+      "source_canvas_rect_xyxy": [
+        31,
+        395,
+        114,
+        469
+      ],
+      "output_size": [
+        83,
+        74
+      ],
+      "source_offset_xy": [
+        45,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        45,
+        0,
+        83,
+        74
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        48,
+        5,
+        79,
+        69
+      ],
+      "pivot_xy": [
+        41.5,
+        74
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Left/right means image side. Both files share full pair canvas and lower-center pivot; do not trim independently.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "wolf_ear_left",
+      "file": "05_head_parts/wolf_ear_left.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.ear.left",
+      "source_rect_xyxy": [
+        145,
+        398,
+        191,
+        468
+      ],
+      "source_crop_size": [
+        46,
+        70
+      ],
+      "source_canvas_rect_xyxy": [
+        145,
+        398,
+        234,
+        468
+      ],
+      "output_size": [
+        89,
+        70
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        46,
+        70
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        9,
+        8,
+        43,
+        63
+      ],
+      "pivot_xy": [
+        44.5,
+        70
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Left/right means image side. Both files share full pair canvas and lower-center pivot; do not trim independently.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "wolf_ear_right",
+      "file": "05_head_parts/wolf_ear_right.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.ear.right",
+      "source_rect_xyxy": [
+        194,
+        398,
+        234,
+        468
+      ],
+      "source_crop_size": [
+        40,
+        70
+      ],
+      "source_canvas_rect_xyxy": [
+        145,
+        398,
+        234,
+        468
+      ],
+      "output_size": [
+        89,
+        70
+      ],
+      "source_offset_xy": [
+        49,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        49,
+        0,
+        89,
+        70
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        52,
+        8,
+        85,
+        63
+      ],
+      "pivot_xy": [
+        44.5,
+        70
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Left/right means image side. Both files share full pair canvas and lower-center pivot; do not trim independently.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "tiger_ear_left",
+      "file": "05_head_parts/tiger_ear_left.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.ear.left",
+      "source_rect_xyxy": [
+        259,
+        409,
+        309,
+        466
+      ],
+      "source_crop_size": [
+        50,
+        57
+      ],
+      "source_canvas_rect_xyxy": [
+        259,
+        409,
+        360,
+        466
+      ],
+      "output_size": [
+        101,
+        57
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        5,
+        50,
+        57
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        7,
+        47,
+        51
+      ],
+      "pivot_xy": [
+        50.5,
+        57
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Left/right means image side. Both files share full pair canvas and lower-center pivot; do not trim independently.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "tiger_ear_right",
+      "file": "05_head_parts/tiger_ear_right.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.ear.right",
+      "source_rect_xyxy": [
+        310,
+        409,
+        360,
+        466
+      ],
+      "source_crop_size": [
+        50,
+        57
+      ],
+      "source_canvas_rect_xyxy": [
+        259,
+        409,
+        360,
+        466
+      ],
+      "output_size": [
+        101,
+        57
+      ],
+      "source_offset_xy": [
+        51,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        51,
+        3,
+        101,
+        57
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        54,
+        7,
+        97,
+        52
+      ],
+      "pivot_xy": [
+        50.5,
+        57
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Left/right means image side. Both files share full pair canvas and lower-center pivot; do not trim independently.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "leaves",
+      "file": "05_head_parts/leaves.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.leaves",
+      "source_rect_xyxy": [
+        381,
+        403,
+        473,
+        467
+      ],
+      "source_crop_size": [
+        92,
+        64
+      ],
+      "source_canvas_rect_xyxy": [
+        381,
+        403,
+        473,
+        467
+      ],
+      "output_size": [
+        92,
+        64
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        91,
+        64
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        7,
+        87,
+        61
+      ],
+      "pivot_xy": [
+        46.0,
+        64
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "hair",
+      "file": "05_head_parts/hair.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.hair",
+      "source_rect_xyxy": [
+        490,
+        399,
+        593,
+        471
+      ],
+      "source_crop_size": [
+        103,
+        72
+      ],
+      "source_canvas_rect_xyxy": [
+        490,
+        399,
+        593,
+        471
+      ],
+      "output_size": [
+        103,
+        72
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        103,
+        72
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        3,
+        5,
+        98,
+        67
+      ],
+      "pivot_xy": [
+        51.5,
+        72
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "crown",
+      "file": "05_head_parts/crown.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.crown",
+      "source_rect_xyxy": [
+        24,
+        520,
+        113,
+        595
+      ],
+      "source_crop_size": [
+        89,
+        75
+      ],
+      "source_canvas_rect_xyxy": [
+        24,
+        520,
+        113,
+        595
+      ],
+      "output_size": [
+        89,
+        75
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        1,
+        89,
+        75
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        4,
+        84,
+        69
+      ],
+      "pivot_xy": [
+        44.5,
+        75
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "helmet",
+      "file": "05_head_parts/helmet.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.helmet",
+      "source_rect_xyxy": [
+        115,
+        512,
+        195,
+        599
+      ],
+      "source_crop_size": [
+        80,
+        87
+      ],
+      "source_canvas_rect_xyxy": [
+        115,
+        512,
+        195,
+        599
+      ],
+      "output_size": [
+        80,
+        87
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        1,
+        79,
+        87
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        5,
+        77,
+        82
+      ],
+      "pivot_xy": [
+        40.0,
+        87
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "hood",
+      "file": "05_head_parts/hood.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.hood",
+      "source_rect_xyxy": [
+        204,
+        519,
+        299,
+        604
+      ],
+      "source_crop_size": [
+        95,
+        85
+      ],
+      "source_canvas_rect_xyxy": [
+        204,
+        519,
+        299,
+        604
+      ],
+      "output_size": [
+        95,
+        85
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        3,
+        3,
+        90,
+        85
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        88,
+        81
+      ],
+      "pivot_xy": [
+        47.5,
+        85
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Hood and headscarf include visible skin/cream areas already baked into source; preserve source as-is.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "headscarf",
+      "file": "05_head_parts/headscarf.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.headscarf",
+      "source_rect_xyxy": [
+        306,
+        529,
+        387,
+        601
+      ],
+      "source_crop_size": [
+        81,
+        72
+      ],
+      "source_canvas_rect_xyxy": [
+        306,
+        529,
+        387,
+        601
+      ],
+      "output_size": [
+        81,
+        72
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        81,
+        72
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        7,
+        78,
+        70
+      ],
+      "pivot_xy": [
+        40.5,
+        72
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Hood and headscarf include visible skin/cream areas already baked into source; preserve source as-is.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "horn_small",
+      "file": "05_head_parts/horn_small.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.horn_small",
+      "source_rect_xyxy": [
+        422,
+        514,
+        471,
+        598
+      ],
+      "source_crop_size": [
+        49,
+        84
+      ],
+      "source_canvas_rect_xyxy": [
+        422,
+        514,
+        471,
+        598
+      ],
+      "output_size": [
+        49,
+        84
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        1,
+        46,
+        84
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        6,
+        43,
+        77
+      ],
+      "pivot_xy": [
+        24.5,
+        84
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "horn_large",
+      "file": "05_head_parts/horn_large.png",
+      "section": "05_head_parts",
+      "status": "component",
+      "slot": "head.horn_large",
+      "source_rect_xyxy": [
+        530,
+        514,
+        577,
+        598
+      ],
+      "source_crop_size": [
+        47,
+        84
+      ],
+      "source_canvas_rect_xyxy": [
+        530,
+        514,
+        577,
+        598
+      ],
+      "output_size": [
+        47,
+        84
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        2,
+        44,
+        84
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        41,
+        76
+      ],
+      "pivot_xy": [
+        23.5,
+        84
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "stripe_upper",
+      "file": "06_markings/stripe_upper.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        636,
+        402,
+        691,
+        430
+      ],
+      "source_crop_size": [
+        55,
+        28
+      ],
+      "source_canvas_rect_xyxy": [
+        636,
+        402,
+        691,
+        430
+      ],
+      "output_size": [
+        55,
+        28
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        0,
+        55,
+        28
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        4,
+        51,
+        23
+      ],
+      "pivot_xy": [
+        27.5,
+        14.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "stripe_lower",
+      "file": "06_markings/stripe_lower.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        636,
+        430,
+        691,
+        458
+      ],
+      "source_crop_size": [
+        55,
+        28
+      ],
+      "source_canvas_rect_xyxy": [
+        636,
+        430,
+        691,
+        458
+      ],
+      "output_size": [
+        55,
+        28
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        54,
+        28
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        3,
+        51,
+        22
+      ],
+      "pivot_xy": [
+        27.5,
+        14.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "cross_mark",
+      "file": "06_markings/cross_mark.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        791,
+        400,
+        851,
+        459
+      ],
+      "source_crop_size": [
+        60,
+        59
+      ],
+      "source_canvas_rect_xyxy": [
+        791,
+        400,
+        851,
+        459
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        57,
+        59
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        4,
+        55,
+        54
+      ],
+      "pivot_xy": [
+        30.0,
+        29.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "king_mark",
+      "file": "06_markings/king_mark.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        876,
+        400,
+        932,
+        459
+      ],
+      "source_crop_size": [
+        56,
+        59
+      ],
+      "source_canvas_rect_xyxy": [
+        876,
+        400,
+        932,
+        459
+      ],
+      "output_size": [
+        56,
+        59
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        0,
+        54,
+        59
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        5,
+        51,
+        54
+      ],
+      "pivot_xy": [
+        28.0,
+        29.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "mask",
+      "file": "06_markings/mask.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        789,
+        506,
+        858,
+        574
+      ],
+      "source_crop_size": [
+        69,
+        68
+      ],
+      "source_canvas_rect_xyxy": [
+        789,
+        506,
+        858,
+        574
+      ],
+      "output_size": [
+        69,
+        68
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        65,
+        68
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        4,
+        62,
+        59
+      ],
+      "pivot_xy": [
+        34.5,
+        34.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "brow_mark",
+      "file": "06_markings/brow_mark.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        872,
+        519,
+        939,
+        565
+      ],
+      "source_crop_size": [
+        67,
+        46
+      ],
+      "source_canvas_rect_xyxy": [
+        872,
+        519,
+        939,
+        565
+      ],
+      "output_size": [
+        67,
+        46
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        2,
+        3,
+        65,
+        45
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        5,
+        61,
+        40
+      ],
+      "pivot_xy": [
+        33.5,
+        23.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "blush_left",
+      "file": "06_markings/blush_left.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.blush.left",
+      "source_rect_xyxy": [
+        709,
+        522,
+        740,
+        559
+      ],
+      "source_crop_size": [
+        31,
+        37
+      ],
+      "source_canvas_rect_xyxy": [
+        709,
+        522,
+        773,
+        559
+      ],
+      "output_size": [
+        64,
+        37
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        3,
+        31,
+        37
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        5,
+        30,
+        31
+      ],
+      "pivot_xy": [
+        32,
+        18.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Shared pair canvas; left/right means image side.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "blush_right",
+      "file": "06_markings/blush_right.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.blush.right",
+      "source_rect_xyxy": [
+        742,
+        522,
+        773,
+        559
+      ],
+      "source_crop_size": [
+        31,
+        37
+      ],
+      "source_canvas_rect_xyxy": [
+        709,
+        522,
+        773,
+        559
+      ],
+      "output_size": [
+        64,
+        37
+      ],
+      "source_offset_xy": [
+        33,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        33,
+        2,
+        64,
+        37
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        33,
+        5,
+        58,
+        31
+      ],
+      "pivot_xy": [
+        32,
+        18.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Shared pair canvas; left/right means image side.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "forehead_mark_left",
+      "file": "06_markings/forehead_mark_left.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        715,
+        399,
+        743,
+        459
+      ],
+      "source_crop_size": [
+        28,
+        60
+      ],
+      "source_canvas_rect_xyxy": [
+        715,
+        399,
+        767,
+        459
+      ],
+      "output_size": [
+        52,
+        60
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        28,
+        60
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        11,
+        25,
+        53
+      ],
+      "pivot_xy": [
+        26.0,
+        30.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "forehead_mark_right",
+      "file": "06_markings/forehead_mark_right.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        744,
+        399,
+        767,
+        459
+      ],
+      "source_crop_size": [
+        23,
+        60
+      ],
+      "source_canvas_rect_xyxy": [
+        715,
+        399,
+        767,
+        459
+      ],
+      "output_size": [
+        52,
+        60
+      ],
+      "source_offset_xy": [
+        29,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        29,
+        0,
+        52,
+        60
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        30,
+        5,
+        46,
+        54
+      ],
+      "pivot_xy": [
+        26.0,
+        30.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "spot_upper",
+      "file": "06_markings/spot_upper.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        637,
+        514,
+        664,
+        542
+      ],
+      "source_crop_size": [
+        27,
+        28
+      ],
+      "source_canvas_rect_xyxy": [
+        636,
+        513,
+        685,
+        570
+      ],
+      "output_size": [
+        49,
+        57
+      ],
+      "source_offset_xy": [
+        1,
+        1
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        1,
+        28,
+        29
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        6,
+        24,
+        26
+      ],
+      "pivot_xy": [
+        24.5,
+        28.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "spot_middle",
+      "file": "06_markings/spot_middle.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        661,
+        534,
+        685,
+        555
+      ],
+      "source_crop_size": [
+        24,
+        21
+      ],
+      "source_canvas_rect_xyxy": [
+        636,
+        513,
+        685,
+        570
+      ],
+      "output_size": [
+        49,
+        57
+      ],
+      "source_offset_xy": [
+        25,
+        21
+      ],
+      "alpha_bbox_xyxy": [
+        25,
+        21,
+        49,
+        42
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        30,
+        24,
+        45,
+        39
+      ],
+      "pivot_xy": [
+        24.5,
+        28.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "spot_lower",
+      "file": "06_markings/spot_lower.png",
+      "section": "06_markings",
+      "status": "component",
+      "slot": "face.marking",
+      "source_rect_xyxy": [
+        639,
+        545,
+        662,
+        570
+      ],
+      "source_crop_size": [
+        23,
+        25
+      ],
+      "source_canvas_rect_xyxy": [
+        636,
+        513,
+        685,
+        570
+      ],
+      "output_size": [
+        49,
+        57
+      ],
+      "source_offset_xy": [
+        3,
+        32
+      ],
+      "alpha_bbox_xyxy": [
+        3,
+        32,
+        26,
+        57
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        8,
+        37,
+        23,
+        52
+      ],
+      "pivot_xy": [
+        24.5,
+        28.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "cape",
+      "file": "07_body_equipment/cape.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.cape",
+      "source_rect_xyxy": [
+        975,
+        400,
+        1065,
+        476
+      ],
+      "source_crop_size": [
+        90,
+        76
+      ],
+      "source_canvas_rect_xyxy": [
+        975,
+        400,
+        1065,
+        476
+      ],
+      "output_size": [
+        90,
+        76
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        90,
+        76
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        6,
+        87,
+        71
+      ],
+      "pivot_xy": [
+        45.0,
+        38.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "armor",
+      "file": "07_body_equipment/armor.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.armor",
+      "source_rect_xyxy": [
+        1074,
+        399,
+        1152,
+        475
+      ],
+      "source_crop_size": [
+        78,
+        76
+      ],
+      "source_canvas_rect_xyxy": [
+        1074,
+        399,
+        1152,
+        475
+      ],
+      "output_size": [
+        78,
+        76
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        78,
+        76
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        8,
+        74,
+        70
+      ],
+      "pivot_xy": [
+        39.0,
+        38.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "robe",
+      "file": "07_body_equipment/robe.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.robe",
+      "source_rect_xyxy": [
+        1160,
+        399,
+        1246,
+        483
+      ],
+      "source_crop_size": [
+        86,
+        84
+      ],
+      "source_canvas_rect_xyxy": [
+        1160,
+        399,
+        1246,
+        483
+      ],
+      "output_size": [
+        86,
+        84
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        3,
+        0,
+        86,
+        84
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        8,
+        81,
+        77
+      ],
+      "pivot_xy": [
+        43.0,
+        42.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "scarf",
+      "file": "07_body_equipment/scarf.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.scarf",
+      "source_rect_xyxy": [
+        1258,
+        405,
+        1338,
+        481
+      ],
+      "source_crop_size": [
+        80,
+        76
+      ],
+      "source_canvas_rect_xyxy": [
+        1258,
+        405,
+        1338,
+        481
+      ],
+      "output_size": [
+        80,
+        76
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        3,
+        3,
+        80,
+        76
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        7,
+        74,
+        69
+      ],
+      "pivot_xy": [
+        40.0,
+        38.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "spear",
+      "file": "07_body_equipment/spear.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.spear",
+      "source_rect_xyxy": [
+        1370,
+        375,
+        1418,
+        484
+      ],
+      "source_crop_size": [
+        48,
+        109
+      ],
+      "source_canvas_rect_xyxy": [
+        1370,
+        375,
+        1418,
+        484
+      ],
+      "output_size": [
+        48,
+        109
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        1,
+        0,
+        42,
+        109
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        4,
+        40,
+        106
+      ],
+      "pivot_xy": [
+        24.0,
+        54.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "dagger",
+      "file": "07_body_equipment/dagger.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.dagger",
+      "source_rect_xyxy": [
+        1456,
+        391,
+        1501,
+        484
+      ],
+      "source_crop_size": [
+        45,
+        93
+      ],
+      "source_canvas_rect_xyxy": [
+        1456,
+        391,
+        1501,
+        484
+      ],
+      "output_size": [
+        45,
+        93
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        45,
+        93
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        8,
+        4,
+        36,
+        90
+      ],
+      "pivot_xy": [
+        22.5,
+        46.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "belt",
+      "file": "07_body_equipment/belt.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.belt",
+      "source_rect_xyxy": [
+        975,
+        550,
+        1062,
+        594
+      ],
+      "source_crop_size": [
+        87,
+        44
+      ],
+      "source_canvas_rect_xyxy": [
+        975,
+        550,
+        1062,
+        594
+      ],
+      "output_size": [
+        87,
+        44
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        4,
+        87,
+        44
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        8,
+        8,
+        81,
+        38
+      ],
+      "pivot_xy": [
+        43.5,
+        22.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "pauldron",
+      "file": "07_body_equipment/pauldron.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.pauldron",
+      "source_rect_xyxy": [
+        1070,
+        526,
+        1135,
+        600
+      ],
+      "source_crop_size": [
+        65,
+        74
+      ],
+      "source_canvas_rect_xyxy": [
+        1070,
+        526,
+        1135,
+        600
+      ],
+      "output_size": [
+        65,
+        74
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        2,
+        64,
+        74
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        5,
+        60,
+        69
+      ],
+      "pivot_xy": [
+        32.5,
+        37.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "backpack",
+      "file": "07_body_equipment/backpack.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.backpack",
+      "source_rect_xyxy": [
+        1157,
+        526,
+        1235,
+        603
+      ],
+      "source_crop_size": [
+        78,
+        77
+      ],
+      "source_canvas_rect_xyxy": [
+        1157,
+        526,
+        1235,
+        603
+      ],
+      "output_size": [
+        78,
+        77
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        2,
+        78,
+        77
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        5,
+        69,
+        72
+      ],
+      "pivot_xy": [
+        39.0,
+        38.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "cloak",
+      "file": "07_body_equipment/cloak.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.cloak",
+      "source_rect_xyxy": [
+        1255,
+        527,
+        1333,
+        603
+      ],
+      "source_crop_size": [
+        78,
+        76
+      ],
+      "source_canvas_rect_xyxy": [
+        1255,
+        527,
+        1333,
+        603
+      ],
+      "output_size": [
+        78,
+        76
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        1,
+        74,
+        76
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        5,
+        72,
+        70
+      ],
+      "pivot_xy": [
+        39.0,
+        38.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "necklace",
+      "file": "07_body_equipment/necklace.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.necklace",
+      "source_rect_xyxy": [
+        1349,
+        531,
+        1424,
+        605
+      ],
+      "source_crop_size": [
+        75,
+        74
+      ],
+      "source_canvas_rect_xyxy": [
+        1349,
+        531,
+        1424,
+        605
+      ],
+      "output_size": [
+        75,
+        74
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        72,
+        74
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        7,
+        67,
+        73
+      ],
+      "pivot_xy": [
+        37.5,
+        37.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "chest_emblem",
+      "file": "07_body_equipment/chest_emblem.png",
+      "section": "07_body_equipment",
+      "status": "component",
+      "slot": "equipment.chest_emblem",
+      "source_rect_xyxy": [
+        1445,
+        527,
+        1514,
+        603
+      ],
+      "source_crop_size": [
+        69,
+        76
+      ],
+      "source_canvas_rect_xyxy": [
+        1445,
+        527,
+        1514,
+        603
+      ],
+      "output_size": [
+        69,
+        76
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        69,
+        76
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        6,
+        63,
+        66
+      ],
+      "pivot_xy": [
+        34.5,
+        38.0
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_01",
+      "file": "reference/example_01_01.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        25,
+        696,
+        126,
+        817
+      ],
+      "source_crop_size": [
+        101,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        25,
+        696,
+        126,
+        817
+      ],
+      "output_size": [
+        101,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        101,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        11,
+        96,
+        121
+      ],
+      "pivot_xy": [
+        50.5,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_02",
+      "file": "reference/example_01_02.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        140,
+        696,
+        242,
+        817
+      ],
+      "source_crop_size": [
+        102,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        140,
+        696,
+        242,
+        817
+      ],
+      "output_size": [
+        102,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        102,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        7,
+        16,
+        99,
+        120
+      ],
+      "pivot_xy": [
+        51.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_03",
+      "file": "reference/example_01_03.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        261,
+        696,
+        363,
+        817
+      ],
+      "source_crop_size": [
+        102,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        261,
+        696,
+        363,
+        817
+      ],
+      "output_size": [
+        102,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        102,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        5,
+        15,
+        97,
+        120
+      ],
+      "pivot_xy": [
+        51.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_04",
+      "file": "reference/example_01_04.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        375,
+        696,
+        483,
+        817
+      ],
+      "source_crop_size": [
+        108,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        375,
+        696,
+        483,
+        817
+      ],
+      "output_size": [
+        108,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        108,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        7,
+        21,
+        99,
+        120
+      ],
+      "pivot_xy": [
+        54.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_05",
+      "file": "reference/example_01_05.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        489,
+        696,
+        595,
+        817
+      ],
+      "source_crop_size": [
+        106,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        489,
+        696,
+        595,
+        817
+      ],
+      "output_size": [
+        106,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        106,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        21,
+        97,
+        118
+      ],
+      "pivot_xy": [
+        53.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_06",
+      "file": "reference/example_01_06.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        612,
+        696,
+        712,
+        817
+      ],
+      "source_crop_size": [
+        100,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        612,
+        696,
+        712,
+        817
+      ],
+      "output_size": [
+        100,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        100,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        9,
+        93,
+        118
+      ],
+      "pivot_xy": [
+        50.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_07",
+      "file": "reference/example_01_07.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        720,
+        696,
+        824,
+        817
+      ],
+      "source_crop_size": [
+        104,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        720,
+        696,
+        824,
+        817
+      ],
+      "output_size": [
+        104,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        104,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        6,
+        97,
+        117
+      ],
+      "pivot_xy": [
+        52.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_08",
+      "file": "reference/example_01_08.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        830,
+        696,
+        939,
+        817
+      ],
+      "source_crop_size": [
+        109,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        830,
+        696,
+        939,
+        817
+      ],
+      "output_size": [
+        109,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        5,
+        109,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        3,
+        7,
+        109,
+        119
+      ],
+      "pivot_xy": [
+        54.5,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_09",
+      "file": "reference/example_01_09.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        947,
+        696,
+        1057,
+        817
+      ],
+      "source_crop_size": [
+        110,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        947,
+        696,
+        1057,
+        817
+      ],
+      "output_size": [
+        110,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        6,
+        110,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        13,
+        13,
+        105,
+        119
+      ],
+      "pivot_xy": [
+        55.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_10",
+      "file": "reference/example_01_10.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1069,
+        696,
+        1182,
+        817
+      ],
+      "source_crop_size": [
+        113,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        1069,
+        696,
+        1182,
+        817
+      ],
+      "output_size": [
+        113,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        113,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        11,
+        0,
+        108,
+        117
+      ],
+      "pivot_xy": [
+        56.5,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_11",
+      "file": "reference/example_01_11.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1186,
+        696,
+        1297,
+        817
+      ],
+      "source_crop_size": [
+        111,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        1186,
+        696,
+        1297,
+        817
+      ],
+      "output_size": [
+        111,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        111,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        11,
+        2,
+        104,
+        118
+      ],
+      "pivot_xy": [
+        55.5,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_12",
+      "file": "reference/example_01_12.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1303,
+        696,
+        1412,
+        817
+      ],
+      "source_crop_size": [
+        109,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        1303,
+        696,
+        1412,
+        817
+      ],
+      "output_size": [
+        109,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        1,
+        109,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        4,
+        98,
+        118
+      ],
+      "pivot_xy": [
+        54.5,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_01_13",
+      "file": "reference/example_01_13.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1415,
+        696,
+        1523,
+        817
+      ],
+      "source_crop_size": [
+        108,
+        121
+      ],
+      "source_canvas_rect_xyxy": [
+        1415,
+        696,
+        1523,
+        817
+      ],
+      "output_size": [
+        108,
+        121
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        108,
+        121
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        0,
+        5,
+        103,
+        117
+      ],
+      "pivot_xy": [
+        54.0,
+        60.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_01",
+      "file": "reference/example_02_01.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        25,
+        845,
+        126,
+        974
+      ],
+      "source_crop_size": [
+        101,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        25,
+        845,
+        126,
+        974
+      ],
+      "output_size": [
+        101,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        101,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        2,
+        3,
+        97,
+        129
+      ],
+      "pivot_xy": [
+        50.5,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_02",
+      "file": "reference/example_02_02.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        140,
+        845,
+        242,
+        974
+      ],
+      "source_crop_size": [
+        102,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        140,
+        845,
+        242,
+        974
+      ],
+      "output_size": [
+        102,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        102,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        1,
+        99,
+        129
+      ],
+      "pivot_xy": [
+        51.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_03",
+      "file": "reference/example_02_03.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        261,
+        845,
+        363,
+        974
+      ],
+      "source_crop_size": [
+        102,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        261,
+        845,
+        363,
+        974
+      ],
+      "output_size": [
+        102,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        102,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        4,
+        15,
+        97,
+        122
+      ],
+      "pivot_xy": [
+        51.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_04",
+      "file": "reference/example_02_04.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        375,
+        845,
+        483,
+        974
+      ],
+      "source_crop_size": [
+        108,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        375,
+        845,
+        483,
+        974
+      ],
+      "output_size": [
+        108,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        108,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        9,
+        21,
+        104,
+        122
+      ],
+      "pivot_xy": [
+        54.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_05",
+      "file": "reference/example_02_05.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        489,
+        845,
+        595,
+        974
+      ],
+      "source_crop_size": [
+        106,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        489,
+        845,
+        595,
+        974
+      ],
+      "output_size": [
+        106,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        106,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        13,
+        22,
+        104,
+        122
+      ],
+      "pivot_xy": [
+        53.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_06",
+      "file": "reference/example_02_06.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        612,
+        845,
+        712,
+        974
+      ],
+      "source_crop_size": [
+        100,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        612,
+        845,
+        712,
+        974
+      ],
+      "output_size": [
+        100,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        100,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        10,
+        0,
+        100,
+        120
+      ],
+      "pivot_xy": [
+        50.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_07",
+      "file": "reference/example_02_07.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        720,
+        845,
+        824,
+        974
+      ],
+      "source_crop_size": [
+        104,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        720,
+        845,
+        824,
+        974
+      ],
+      "output_size": [
+        104,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        104,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        16,
+        15,
+        104,
+        129
+      ],
+      "pivot_xy": [
+        52.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_08",
+      "file": "reference/example_02_08.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        830,
+        845,
+        939,
+        974
+      ],
+      "source_crop_size": [
+        109,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        830,
+        845,
+        939,
+        974
+      ],
+      "output_size": [
+        109,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        109,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        0,
+        4,
+        109,
+        122
+      ],
+      "pivot_xy": [
+        54.5,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_09",
+      "file": "reference/example_02_09.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        947,
+        845,
+        1057,
+        974
+      ],
+      "source_crop_size": [
+        110,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        947,
+        845,
+        1057,
+        974
+      ],
+      "output_size": [
+        110,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        110,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        0,
+        15,
+        110,
+        124
+      ],
+      "pivot_xy": [
+        55.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_10",
+      "file": "reference/example_02_10.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1069,
+        845,
+        1182,
+        974
+      ],
+      "source_crop_size": [
+        113,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        1069,
+        845,
+        1182,
+        974
+      ],
+      "output_size": [
+        113,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        113,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        0,
+        26,
+        113,
+        122
+      ],
+      "pivot_xy": [
+        56.5,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_11",
+      "file": "reference/example_02_11.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1186,
+        845,
+        1297,
+        974
+      ],
+      "source_crop_size": [
+        111,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        1186,
+        845,
+        1297,
+        974
+      ],
+      "output_size": [
+        111,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        111,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        0,
+        9,
+        111,
+        125
+      ],
+      "pivot_xy": [
+        55.5,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_12",
+      "file": "reference/example_02_12.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1303,
+        845,
+        1412,
+        974
+      ],
+      "source_crop_size": [
+        109,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        1303,
+        845,
+        1412,
+        974
+      ],
+      "output_size": [
+        109,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        109,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        0,
+        9,
+        105,
+        121
+      ],
+      "pivot_xy": [
+        54.5,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    },
+    {
+      "id": "example_02_13",
+      "file": "reference/example_02_13.png",
+      "section": "reference",
+      "status": "reference",
+      "slot": "reference",
+      "source_rect_xyxy": [
+        1415,
+        845,
+        1523,
+        974
+      ],
+      "source_crop_size": [
+        108,
+        129
+      ],
+      "source_canvas_rect_xyxy": [
+        1415,
+        845,
+        1523,
+        974
+      ],
+      "output_size": [
+        108,
+        129
+      ],
+      "source_offset_xy": [
+        0,
+        0
+      ],
+      "alpha_bbox_xyxy": [
+        0,
+        0,
+        108,
+        129
+      ],
+      "alpha_ge32_bbox_xyxy": [
+        6,
+        16,
+        98,
+        121
+      ],
+      "pivot_xy": [
+        54.0,
+        64.5
+      ],
+      "pivot_note": "Suggested registration only; not an original rig measurement. Pixels are never trimmed.",
+      "notes": "Original example composite only. Text labels excluded; no component layers inferred.",
+      "pixel_fidelity_verified": true
+    }
+  ]
+}

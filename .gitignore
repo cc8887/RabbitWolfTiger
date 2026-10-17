@@ -9,6 +9,8 @@
 # C# / Mono 构建产物（仅项目根，避免误伤源码子目录）
 /bin/
 /obj/
+**/bin/
+**/obj/
 *.csproj.user
 
 # IDE
@@ -23,3 +25,4 @@ shot_*.png
 # 原始设计源文件（放进项目前加 .gdignore 或留在外部）
 *.psd
 *.blend
+

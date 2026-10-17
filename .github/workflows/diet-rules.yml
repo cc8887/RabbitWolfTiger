@@ -1,0 +1,193 @@
+name: Diet rules and portrait integration
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_NOLOGO: '1'
+      DOTNET_MULTILEVEL_LOOKUP: '0'
+      GODOT_SILENCE_ROOT_WARNING: '1'
+      LIBGL_ALWAYS_SOFTWARE: '1'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install exact official toolchains and verify SHA512
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/diet-tools/dotnet" "$RUNNER_TEMP/diet-tools/godot" evidence
+          cd "$RUNNER_TEMP/diet-tools"
+          curl --fail --location --retry 3 --output dotnet.tar.gz \
+            https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.426/dotnet-sdk-8.0.426-linux-x64.tar.gz
+          echo '8141d01bdc53f604aed3bb661b604707a64209f8a947cd81bf95b4f518951593d77864069191f54ea5e84362a409da6b0f69074bf893b283d7e0cf93e2bf20a8  dotnet.tar.gz' | sha512sum --check --strict
+          tar -xzf dotnet.tar.gz -C dotnet
+          curl --fail --location --retry 3 --output godot.zip \
+            https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_mono_linux_x86_64.zip
+          echo '1855960b27ee3ef5e66e5e228cced69d55637b24334a7411162687dcd077d8f9f645348cdb8eae984bec8135d49ed855a1e3a16476786b8bce60774fd8402d13  godot.zip' | sha512sum --check --strict
+          unzip -q godot.zip -d godot
+          GODOT="$RUNNER_TEMP/diet-tools/godot/Godot_v4.7.2-stable_mono_linux_x86_64/Godot_v4.7.2-stable_mono_linux.x86_64"
+          chmod +x "$GODOT"
+          echo "DOTNET_ROOT=$RUNNER_TEMP/diet-tools/dotnet" >> "$GITHUB_ENV"
+          echo "$RUNNER_TEMP/diet-tools/dotnet" >> "$GITHUB_PATH"
+          echo "GODOT=$GODOT" >> "$GITHUB_ENV"
+          "$RUNNER_TEMP/diet-tools/dotnet/dotnet" --version | grep -Fx '8.0.426'
+          "$GODOT" --version | grep -E '^4\.7\.2\.stable\.mono\.'
+
+      - name: Standard .NET build and pure rules tests
+        run: |
+          set -euo pipefail
+          dotnet build RabbitWolfTiger.csproj --configuration Debug | tee evidence/build.log
+          dotnet run --project tests/diet/DietRules.Tests.csproj --configuration Release | tee evidence/pure-rules.log
+          grep -Eq '^PASS: [0-9]+ diet rule checks\.' evidence/pure-rules.log
+
+      - name: Import and require a clean second import
+        run: |
+          set -euo pipefail
+          timeout 180 "$GODOT" --headless --path . --import 2>&1 | tee evidence/import-first.log
+          timeout 180 "$GODOT" --headless --path . --import 2>&1 | tee evidence/import-clean.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/import-clean.log; then exit 1; fi
+
+      - name: Headless rules, actual UI integration, main and demo smoke tests
+        run: |
+          set -euo pipefail
+          timeout 60 "$GODOT" --headless --path . res://tests/diet/diet_rules_headless.tscn 2>&1 | tee evidence/godot-rules.log
+          grep -Eq '^PASS: [0-9]+ diet rule checks\.' evidence/godot-rules.log
+          timeout 60 "$GODOT" --headless --path . res://tests/diet/diet_demo_integration.tscn 2>&1 | tee evidence/ui-headless.log
+          grep -Eq '^PASS: [0-9]+ real-scene UI integration checks' evidence/ui-headless.log
+          timeout 60 "$GODOT" --headless --path . --quit-after 10 2>&1 | tee evidence/main-smoke.log
+          grep -F '[GALLERY] Ready: 8 portraits' evidence/main-smoke.log
+          if grep -F '[LEGACY] Movement sandbox ready' evidence/main-smoke.log; then exit 1; fi
+          timeout 60 "$GODOT" --headless --path . res://levels/diet_demo/diet_demo.tscn --quit-after 10 2>&1 | tee evidence/demo-smoke.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/{godot-rules,ui-headless,main-smoke,demo-smoke}.log; then exit 1; fi
+
+      - name: Configured default entry and navigation acceptance
+        run: |
+          set -euo pipefail
+          timeout 90 "$GODOT" --headless --path . res://tests/entry/default_entry_integration.tscn 2>&1 | tee evidence/entry-headless.log
+          grep -Eq '^PASS: [0-9]+ configured-entry/navigation checks' evidence/entry-headless.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/entry-headless.log; then exit 1; fi
+
+      - name: Headless portrait integration
+        run: |
+          set -euo pipefail
+          timeout 90 "$GODOT" --headless --path . res://tests/portrait/portrait_integration.tscn 2>&1 | tee evidence/portrait-headless.log
+          grep -Eq '^PASS: [0-9]+ portrait integration checks' evidence/portrait-headless.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/portrait-headless.log; then exit 1; fi
+
+      - name: Install software OpenGL and Xvfb
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y xvfb xauth libgl1-mesa-dri mesa-utils
+
+      - name: Real OpenGL configured homepage acceptance and screenshot
+        run: |
+          set -euo pipefail
+          timeout 120 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
+            --display-driver x11 --rendering-method gl_compatibility --path . \
+            res://tests/entry/default_entry_integration.tscn -- \
+            --capture-entry="$GITHUB_WORKSPACE/evidence/default-entry.png" 2>&1 | tee evidence/entry-opengl.log
+          grep -Eq '^PASS: [0-9]+ configured-entry/navigation checks' evidence/entry-opengl.log
+          grep -F 'ENTRY_CAPTURE:' evidence/entry-opengl.log
+          grep -E 'OpenGL|OpenGL API' evidence/entry-opengl.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/entry-opengl.log; then exit 1; fi
+          python3 - <<'PYTHON'
+          import pathlib, struct
+          data = pathlib.Path('evidence/default-entry.png').read_bytes()
+          assert data[:8] == b'\x89PNG\r\n\x1a\n'
+          assert struct.unpack('>II', data[16:24]) == (1280, 720)
+          print('Configured default homepage screenshot verified: 1280x720')
+          PYTHON
+
+      - name: Real OpenGL UI integration and screenshot
+        run: |
+          set -euo pipefail
+          timeout 90 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
+            --display-driver x11 --rendering-method gl_compatibility --path . \
+            res://tests/diet/diet_demo_integration.tscn -- \
+            --capture="$GITHUB_WORKSPACE/evidence/diet-demo.png" 2>&1 | tee evidence/ui-opengl.log
+          grep -Eq '^PASS: [0-9]+ real-scene UI integration checks' evidence/ui-opengl.log
+          grep -F 'CAPTURE:' evidence/ui-opengl.log
+          grep -E 'OpenGL|OpenGL API' evidence/ui-opengl.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/ui-opengl.log; then exit 1; fi
+          python3 - <<'PY'
+          import pathlib, struct
+          p = pathlib.Path('evidence/diet-demo.png')
+          data = p.read_bytes()
+          assert data[:8] == b'\x89PNG\r\n\x1a\n', 'Missing PNG signature'
+          width, height = struct.unpack('>II', data[16:24])
+          assert width >= 1000 and height >= 600, (width, height)
+          print(f'PNG verified: {width}x{height}, {len(data)} bytes')
+          PY
+
+      - name: Real OpenGL eight-traveler portrait gallery and expression sequence
+        run: |
+          set -euo pipefail
+          timeout 180 xvfb-run -a -s '-screen 0 1280x720x24' "$GODOT" \
+            --display-driver x11 --rendering-method gl_compatibility --path . \
+            res://tests/portrait/portrait_integration.tscn -- \
+            --capture="$GITHUB_WORKSPACE/evidence/portrait.png" \
+            --frames-dir="$GITHUB_WORKSPACE/evidence/portrait-frames" 2>&1 | tee evidence/portrait-opengl.log
+          grep -Eq '^PASS: [0-9]+ portrait integration checks' evidence/portrait-opengl.log
+          grep -F 'PORTRAIT_CAPTURE:' evidence/portrait-opengl.log
+          grep -F 'PORTRAIT_FRAMES:' evidence/portrait-opengl.log
+          grep -E 'OpenGL|OpenGL API' evidence/portrait-opengl.log
+          if grep -Ei '(^|[[:space:]])(SCRIPT ERROR|ERROR):|Unhandled exception|Failed to load' evidence/portrait-opengl.log; then exit 1; fi
+          python3 - <<'PYTHON'
+          import json, pathlib, struct
+          root = pathlib.Path('evidence')
+          frames = sorted((root / 'portrait-frames').glob('portrait-*.png'))
+          expressions = sorted((root / 'portrait-frames').glob('expression-*.png'))
+          assert len(frames) == 60, len(frames)
+          assert len(expressions) == 5, len(expressions)
+          sequence = json.loads((root / 'portrait-frames/sequence.json').read_text())
+          assert (sequence['fps'], sequence['frames'], sequence['durationSeconds']) == (12, 60, 5)
+          for path in [root / 'portrait.png', *frames, *expressions]:
+              data = path.read_bytes()
+              assert data[:8] == b'\x89PNG\r\n\x1a\n', path
+              assert struct.unpack('>II', data[16:24]) == (1280, 720), path
+          print('Portrait evidence verified: gallery, five expressions, 60 controlled animation frames')
+          PYTHON
+          sha256sum evidence/portrait-frames/*.png evidence/portrait-frames/sequence.json > evidence/portrait-sequence.sha256
+
+      # Screenshots are generated solely from this repository's test scenes.
+      # Text transport remains usable when the account's artifact quota is full.
+      - name: Emit screenshot checksum and base64 transport
+        if: success()
+        run: |
+          set -euo pipefail
+          sha256sum evidence/default-entry.png | tee evidence/default-entry.sha256
+          echo 'BEGIN_DEFAULT_ENTRY_PNG_BASE64'
+          base64 --wrap=76 evidence/default-entry.png
+          echo 'END_DEFAULT_ENTRY_PNG_BASE64'
+          sha256sum evidence/portrait.png | tee evidence/portrait.sha256
+          echo 'BEGIN_PORTRAIT_PNG_BASE64'
+          base64 --wrap=76 evidence/portrait.png
+          echo 'END_PORTRAIT_PNG_BASE64'
+          sha256sum evidence/diet-demo.png | tee evidence/diet-demo.sha256
+          echo 'BEGIN_DIET_DEMO_PNG_BASE64'
+          base64 --wrap=76 evidence/diet-demo.png
+          echo 'END_DIET_DEMO_PNG_BASE64'
+
+      - name: Upload optional evidence bundle
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: diet-rules-evidence-${{ github.sha }}
+          path: evidence/
+          if-no-files-found: warn
+          retention-days: 7
