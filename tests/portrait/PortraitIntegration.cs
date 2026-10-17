@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
+using RabbitWolfTiger.Tests.Localization;
 using RabbitWolfTiger.Entities.Diet;
 using RabbitWolfTiger.Entities.Portrait;
 using RabbitWolfTiger.Levels.PortraitGallery;
@@ -108,6 +110,11 @@ public partial class PortraitIntegration : Node
                 throw new InvalidOperationException("Portrait capture requires an actual rendering display; headless/dummy output is refused.");
             foreach (string? path in new[] { capture, framesDirectory })
                 if (path != null) Check(System.IO.Path.IsPathFullyQualified(path), "Capture destinations must be absolute.");
+            Check(UiText.Locale == "zh_CN" && UiText.FontPath == "res://resources/fonts/RwtSansSC-Regular.otf", "Default UI must use Simplified Chinese and its bundled font.");
+            Check(UiText.Expression(FaceExpression.Neutral) == "中性" && UiText.Expression(FaceExpression.Happy) == "开心" &&
+                UiText.Expression(FaceExpression.Angry) == "生气" && UiText.Expression(FaceExpression.Scared) == "害怕" &&
+                UiText.Expression(FaceExpression.Sad) == "难过", "All expression labels must be Chinese while enum identity stays unchanged.");
+            _checks += ChineseUiChecks.DeclaredGlyphs(UiText.FontPath);
             CheckApertureContract();
             foreach (string asset in new[] { "generated/pupil_black.svg", "generated/mouth_neutral_fork.svg", "generated/mouth_neutral_human.svg",
                 "generated/muzzle_double_lobe.svg", "generated/nose_heart_pink.svg", "art/02_eyes/sclera_blank.png" })
@@ -333,6 +340,7 @@ public partial class PortraitIntegration : Node
                 {
                     gallery.SwapMouths();
                     await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+                    _checks += ChineseUiChecks.Run(gallery, UiText.FontPath);
                     for (int card = 0; card < 8; card++)
                     {
                         Label detail = gallery.GetNode<Label>($"Details{card}");
@@ -365,9 +373,11 @@ public partial class PortraitIntegration : Node
             var hood = reference.Portraits[5].GetNode<Sprite2D>("HoodFrame");
             Check(hood.Texture.ResourcePath.EndsWith("hood.png") && hood.Modulate == Colors.White && hood.SelfModulate == Colors.White && hood.Material is ShaderMaterial,
                 "Assassin must keep the original hood texture/color with a separate opening mask.");
+            _checks += ChineseUiChecks.Run(reference, UiText.FontPath);
             reference.QueueFree(); await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
             gallery = galleryScene.Instantiate<PortraitGallery>(); AddChild(gallery);
             foreach (var portrait in gallery.Portraits) { portrait.Animator.SetProcess(false); portrait.Animator.FollowPointer = false; portrait.Animator.AutoBlink = false; Advance(portrait.Animator, 25); }
+            _checks += ChineseUiChecks.Run(gallery, UiText.FontPath);
             await Capture(gallery.Portraits, capture, framesDirectory, gallery.SetExpression);
             GD.Print($"PASS: {_checks} portrait integration checks (real nodes and shader parameters; headless does not verify rendered pixels).");
             GetTree().Quit(0);

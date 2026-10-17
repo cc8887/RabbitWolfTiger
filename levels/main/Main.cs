@@ -1,4 +1,5 @@
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
 using RabbitWolfTiger.Autoloads;
 
 namespace RabbitWolfTiger.Levels;
@@ -12,12 +13,12 @@ public partial class Main : Node2D
     {
         GD.Print("[LEGACY] Movement sandbox ready");
         GameEvents.Instance.EmitLevelReady("main");
-        var hint = new Label { Text = "Legacy movement test only   |   F2: rules   |   F3: return to portraits", Position = new Vector2(24, 660) };
+        var hint = new Label { Text = UiText.T("LegacyHint"), Position = new Vector2(24, 660) };
         AddChild(hint);
-        var demoButton = new Button { Text = "Rules demo / 规则示例 (F2)", Position = new Vector2(24, 605) };
+        var demoButton = new Button { Text = UiText.T("LegacyRules"), Position = new Vector2(24, 605) };
         demoButton.Pressed += OpenDietDemo;
         AddChild(demoButton);
-        var portraitButton = new Button { Text = "Home / 旅客展示 (F3)", Position = new Vector2(380, 605) };
+        var portraitButton = new Button { Text = UiText.T("LegacyHome"), Position = new Vector2(380, 605) };
         portraitButton.Pressed += OpenPortraitGallery;
         AddChild(portraitButton);
     }

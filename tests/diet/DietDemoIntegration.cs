@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
+using RabbitWolfTiger.Tests.Localization;
 
 namespace RabbitWolfTiger.Tests.Diet;
 
@@ -26,8 +28,8 @@ public partial class DietDemoIntegration : Node
             AddChild(demo);
             await Frame();
             Button[] buttons = demo.GetChildren().OfType<Button>().ToArray();
-            Button[] mouths = buttons.Where(b => b.Text == "Swap mouth").ToArray();
-            Button[] faces = buttons.Where(b => b.Text == "Swap face").ToArray();
+            Button[] mouths = buttons.Where(b => b.Text == "换嘴").ToArray();
+            Button[] faces = buttons.Where(b => b.Text == "换脸").ToArray();
             Label[] details = Enumerable.Range(0, 5).Select(i => demo.GetNode<Label>($"Details{i}")).ToArray();
             Check(mouths.Length == 5 && faces.Length == 5 && details.Length == 5, "Five interactive cards required.");
             for (int i = 0; i < 5; i++)
@@ -49,22 +51,23 @@ public partial class DietDemoIntegration : Node
             await Frame();
             Check(mouth.Visible && mouth.Texture.ResourcePath.EndsWith("mouth_open_small.png"), "Mouth swap updates visible mouth texture.");
             Check(face.Texture.ResourcePath.EndsWith("face_human_skin.png"), "Mouth swap preserves face texture.");
-            Check(details[0].Text.Contains("Small") && details[0].Text.Contains("Orange") && details[0].Text.Contains("Carrot"), "Mouth swap updates recipe and eligible target text.");
+            Check(details[0].Text.Contains("小嘴") && details[0].Text.Contains("橙色") && details[0].Text.Contains("胡萝卜"), "Mouth swap updates recipe and eligible target text.");
             faces[0].EmitSignal(Button.SignalName.Pressed);
             await Frame();
             Check(face.Texture.ResourcePath.EndsWith("face_rabbit_cream.png"), "Face swap updates face texture.");
-            Check(mouth.Texture.ResourcePath.EndsWith("mouth_open_small.png") && details[0].Text.Contains("Small"), "Face swap preserves mouth and recipe.");
+            Check(mouth.Texture.ResourcePath.EndsWith("mouth_open_small.png") && details[0].Text.Contains("小嘴"), "Face swap preserves mouth and recipe.");
             foreach (Button button in mouths.Concat(faces))
                 for (int cycle = 0; cycle < 5; cycle++)
                 {
                     button.EmitSignal(Button.SignalName.Pressed);
                     await Frame();
+                    _checks += ChineseUiChecks.Run(demo, UiText.FontPath);
                     for (int card = 0; card < details.Length; card++)
                         Check(details[card].GetGlobalRect().End.Y <= mouths[card].GlobalPosition.Y, "Card text overlaps the mouth button.");
                 }
-            buttons.Single(b => b.Text == "Reset parts").EmitSignal(Button.SignalName.Pressed);
+            buttons.Single(b => b.Text == "重置组件").EmitSignal(Button.SignalName.Pressed);
             await Frame();
-            Check(face.Texture.ResourcePath.EndsWith("face_human_skin.png") && !mouth.Visible && details[0].Text.Contains("None"), "Reset restores initial face, mouth visibility and text.");
+            Check(face.Texture.ResourcePath.EndsWith("face_human_skin.png") && !mouth.Visible && details[0].Text.Contains("不捕食"), "Reset restores initial face, mouth visibility and text.");
             // Worst-case target list: leave the tiger face GoldenOrange and make all four other faces Skin.
             for (int card = 0; card < 4; card++)
                 for (int attempts = 0; attempts < 5 && !demo.GetNode<Sprite2D>($"Parts{card}/Face").Texture.ResourcePath.EndsWith("face_human_skin.png"); attempts++)
@@ -73,13 +76,14 @@ public partial class DietDemoIntegration : Node
                     await Frame();
                 }
             await Frame();
-            Check(details[4].Text.Contains("GoldenOrange") && details[4].Text.Contains("Large") &&
-                details[4].Text.Contains("Human, Rabbit, Wolf, Carrot"), "Worst-case card must contain Large, GoldenOrange and four eligible targets.");
+            Check(details[4].Text.Contains("橙黄") && details[4].Text.Contains("大嘴") &&
+                details[4].Text.Contains("人类、兔子、狼、胡萝卜"), "Worst-case card must contain Large, GoldenOrange and four eligible targets.");
             Check(details[4].GetGlobalRect().End.Y <= mouths[4].GlobalPosition.Y, "Worst-case card overlaps its button.");
             foreach (Label label in demo.GetChildren().OfType<Label>())
                 Check(label.GetRect().End.X <= 1280 && label.GetRect().End.Y <= 720, "Label extends outside the viewport.");
-            buttons.Single(b => b.Text == "Reset parts").EmitSignal(Button.SignalName.Pressed);
+            buttons.Single(b => b.Text == "重置组件").EmitSignal(Button.SignalName.Pressed);
             await Frame();
+            _checks += ChineseUiChecks.Run(demo, UiText.FontPath);
             if (capture != null)
             {
                 string path = capture["--capture=".Length..];

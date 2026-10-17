@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Godot;
+using RabbitWolfTiger.Ui.Localization;
 using RabbitWolfTiger.Entities.Diet;
 using RabbitWolfTiger.Entities.Portrait;
 
@@ -29,43 +30,43 @@ public partial class PortraitGallery : Node2D
         _catalog = DietCatalog.FromJson(FileAccess.GetFileAsString("res://resources/diet/initial_diets.json"));
         Bodies = _species.Select(_catalog.Create).ToArray();
         Portraits = new ModularPortrait[8];
-        Label("MODULAR PORTRAITS", new Vector2(28, 18), 27, "ecdec4");
-        Label("Layered source art + new vector accents / 8 avatars / independent gaze + blink", new Vector2(28, 53), 16, "acb6c9");
-        Button("Rules / F2", "Return", new Vector2(1110, 24), 140, OpenDietDemo);
-        Button("Legacy movement / F4", "LegacySandbox", new Vector2(870, 24), 220, OpenLegacySandbox);
-        Button("Reference QA / F5", "ReferenceQa", new Vector2(660, 24), 195, OpenReferenceQa);
+        Label(UiText.T("GalleryTitle"), new Vector2(28, 18), 27, "ecdec4");
+        Label(UiText.T("GallerySubtitle"), new Vector2(28, 53), 16, "acb6c9");
+        Button(UiText.T("RulesNav"), "Return", new Vector2(1110, 24), 140, OpenDietDemo);
+        Button(UiText.T("LegacyNav"), "LegacySandbox", new Vector2(870, 24), 220, OpenLegacySandbox);
+        Button(UiText.T("ReferenceNav"), "ReferenceQa", new Vector2(660, 24), 195, OpenReferenceQa);
         int e = 0;
         foreach (FaceExpression expression in Enum.GetValues<FaceExpression>())
         {
             FaceExpression captured = expression;
-            Button(expression.ToString(), "Expression" + expression, new Vector2(28 + e * 132, 89), 122, () => SetExpression(captured)); e++;
+            Button(UiText.Expression(expression), "Expression" + expression, new Vector2(28 + e * 132, 89), 122, () => SetExpression(captured)); e++;
         }
-        Button("Blink", "Blink", new Vector2(700, 89), 95, () => { foreach (var p in Portraits) p.Animator.Blink(); });
-        Button("Pause / resume", "Pause", new Vector2(805, 89), 150, TogglePause);
-        Button("Gaze: follow / center", "Gaze", new Vector2(965, 89), 285, ToggleGaze);
+        Button(UiText.T("Blink"), "Blink", new Vector2(700, 89), 95, () => { foreach (var p in Portraits) p.Animator.Blink(); });
+        Button(UiText.T("Pause"), "Pause", new Vector2(805, 89), 150, TogglePause);
+        Button(UiText.T("Gaze"), "Gaze", new Vector2(965, 89), 285, ToggleGaze);
         var scene = GD.Load<PackedScene>("res://entities/portrait/modular_portrait.tscn");
         for (int i = 0; i < 8; i++)
         {
             float x = 28 + (i % 4) * 310; float y = 140 + (i / 4) * 250;
-            Label(_names[i], new Vector2(x + 18, y + 12), 22, "f4dfbb");
+            Label(UiText.Character(_names[i]), new Vector2(x + 18, y + 12), 22, "f4dfbb");
             _expressions[i] = Label("", new Vector2(x + 190, y + 46), 13, "e7c78f");
             int selected = i;
-            Button("Select", "Select" + i, new Vector2(x + 207, y + 10), 70, () => SelectPortrait(selected));
+            Button(UiText.T("Select"), "Select" + i, new Vector2(x + 207, y + 10), 70, () => SelectPortrait(selected));
             var portrait = scene.Instantiate<ModularPortrait>();
             portrait.Name = "Portrait" + i; portrait.Position = new Vector2(x + 147, y + 137); portrait.Scale = Vector2.One;
             AddChild(portrait); Portraits[i] = portrait;
             portrait.Configure(_species[i], _names[i], Bodies[i]);
             portrait.Animator.SetExpression(FaceExpression.Neutral);
             portrait.Animator.FollowPointer = false;
-            _details[i] = Label("", new Vector2(x + 13, y + 200), 13, "d6ddea");
+            _details[i] = Label("", new Vector2(x + 13, y + 192), 13, "d6ddea");
             _details[i].Name = "Details" + i;
         }
-        Button("Swap faces", "SwapFaces", new Vector2(28, 650), 150, SwapFaces);
-        Button("Swap mouths", "SwapMouths", new Vector2(188, 650), 150, SwapMouths);
-        Button("Swap headwear", "SwapHeadParts", new Vector2(348, 650), 170, SwapHeadParts);
-        Button("All", "SelectAll", new Vector2(528, 650), 70, () => SelectPortrait(-1));
+        Button(UiText.T("SwapFaces"), "SwapFaces", new Vector2(28, 650), 150, SwapFaces);
+        Button(UiText.T("SwapMouths"), "SwapMouths", new Vector2(188, 650), 150, SwapMouths);
+        Button(UiText.T("SwapHeadwear"), "SwapHeadParts", new Vector2(348, 650), 170, SwapHeadParts);
+        Button(UiText.T("All"), "SelectAll", new Vector2(528, 650), 70, () => SelectPortrait(-1));
         _state = Label("", new Vector2(614, 652), 14, "e7c78f");
-        Label("Expression mouths are visual only. Gameplay mouth + edible colors are always shown. Human None is provisional; no role abilities.", new Vector2(28, 694), 13, "a6b3c7");
+        Label(UiText.T("GalleryFooter"), new Vector2(28, 694), 13, "a6b3c7");
         RefreshDetails();
         GD.Print("[GALLERY] Ready: 8 portraits");
     }
@@ -125,10 +126,10 @@ public partial class PortraitGallery : Node2D
     {
         for (int i = 0; i < Portraits.Length; i++)
         {
-            _expressions[i].Text = Portraits[i].Animator.Expression.ToString();
-            _details[i].Text = $"Face: {Portraits[i].DisplayedFace}  |  Mouth: {Portraits[i].GameplayMouthSize}\nEats: {Portraits[i].RecipeText}";
+            _expressions[i].Text = UiText.Expression(Portraits[i].Animator.Expression);
+            _details[i].Text = UiText.GalleryDetails(Bodies[i]);
         }
-        if (_state != null) _state.Text = $"Target: {(SelectedIndex < 0 ? "all" : _names[SelectedIndex])}  ·  {(_paused ? "paused" : "live")}  ·  Pointer → gaze";
+        if (_state != null) _state.Text = UiText.GalleryState(SelectedIndex < 0 ? null : _names[SelectedIndex], _paused);
     }
     public override void _Draw()
     {
